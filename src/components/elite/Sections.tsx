@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Counter, Countdown, Particles, Reveal } from "./Effects";
 
 const PACKAGES = [
