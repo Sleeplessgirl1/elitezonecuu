@@ -1,0 +1,720 @@
+import { Counter, Countdown, Particles, Reveal } from "./Effects";
+
+const PACKAGES = [
+  {
+    id: "soldado",
+    name: "SOLDADO",
+    price: "$2,800",
+    accent: "blue" as const,
+    age: "6–12 años",
+    badge: "BÁSICO",
+    short: "Tu primer despliegue. Todo el equipo Nerf clásico para iniciar la batalla.",
+    features: [
+      "Dardos de Nerf clásicos",
+      "5 vs 5 (10 jugadores)",
+      "~2 hrs de juego",
+      "Armas Nerf para todos",
+      "Chalecos de protección",
+      "Lentes de seguridad",
+      "1 moderador del juego",
+      "Captura la bandera + Free for All",
+      "Obstáculos básicos inflables",
+      "Mesa: agua y agua de limón",
+      "Servicio a domicilio en Chihuahua",
+    ],
+  },
+  {
+    id: "elite",
+    name: "ÉLITE",
+    price: "$4,200",
+    accent: "green" as const,
+    age: "8–16 años",
+    badge: "MÁS POPULAR",
+    short: "El paquete favorito. Gelfire, máscaras pro y más modos de juego.",
+    features: [
+      "Todo lo del paquete Soldado",
+      "Modalidad Gelfire (gel hidratado)",
+      "Chalecos premium + máscaras",
+      "2 moderadores",
+      "Obstáculos avanzados + mini inflables",
+      "Modos: Team Deathmatch + VIP Escort",
+      "Snacks ligeros + agua de sabores",
+      "Decoración temática militar-neón",
+      "1 hora extra opcional (+costo)",
+    ],
+  },
+  {
+    id: "comando",
+    name: "COMANDO TOTAL",
+    price: "$6,800",
+    accent: "orange" as const,
+    age: "Todas las edades",
+    badge: "PREMIUM",
+    short: "La experiencia definitiva. Foto + video, ambos arsenales y arena completa.",
+    features: [
+      "Todo lo del paquete Élite",
+      "Cobertura fotográfica profesional",
+      "Filmación de momentos épicos",
+      "Nerf clásico + Gelfire",
+      "Equipo premium (máscaras tácticas)",
+      "Arena inflable temática completa",
+      "Todos los modos disponibles",
+      "2 hrs + 30 min cierre/premiación",
+      "Mesa premium: bebidas, snacks, fruta",
+      "Medallas pixel para ganadores",
+      "Coordinator de fiesta dedicado",
+    ],
+  },
+];
+
+const POLICIES = [
+  {
+    q: "Reservaciones y pagos",
+    a: "Anticipo del 50% para apartar fecha. Liquidación el día del evento. Cancelaciones con más de 48 hrs reciben reembolso del anticipo o reagendamiento.",
+  },
+  {
+    q: "Seguridad",
+    a: "Supervisión adulta obligatoria durante toda la batalla. Uso correcto de lentes, chalecos y máscaras. Nuestros moderadores aplican las reglas en todo momento.",
+  },
+  {
+    q: "Responsabilidades",
+    a: "Espacio mínimo de 8x8 metros (jardín, patio, terraza o salón). En caso de lluvia se reagenda sin costo si no hay área techada disponible.",
+  },
+  {
+    q: "Edad y participantes",
+    a: "Edad mínima 6 años. Capacidad recomendada de 8 a 20 jugadores según paquete. Grupos más grandes se cotizan personalizado.",
+  },
+  {
+    q: "Daños al equipo",
+    a: "Equipo profesional incluido. Daños por mal uso intencional generan un cargo proporcional. El desgaste normal corre por nuestra cuenta.",
+  },
+];
+
+const accentMap = {
+  green: { border: "border-neon-green", text: "text-neon-green", glow: "glow-green", textGlow: "text-glow-green" },
+  blue: { border: "border-neon-blue", text: "text-neon-blue", glow: "glow-blue", textGlow: "text-glow-blue" },
+  orange: { border: "border-neon-orange", text: "text-neon-orange", glow: "glow-orange", textGlow: "text-glow-orange" },
+};
+
+/* ---------------- Hero ---------------- */
+export function Hero({ mode }: { mode: "nerf" | "gel" }) {
+  const accent = mode === "nerf" ? "neon-green" : "neon-blue";
+  return (
+    <section
+      id="inicio"
+      className="scanlines tactical-grid relative isolate overflow-hidden bg-black pt-24 pb-20 sm:pt-32 sm:pb-28"
+    >
+      <Particles />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-none border border-neon-green/60 bg-black/70 px-3 py-1.5 font-pixel text-[9px] text-neon-green pulse-soft">
+          📍 SERVICIO EN CHIHUAHUA, CHIH.
+        </div>
+
+        <h1
+          className="glitch font-pixel mx-auto max-w-4xl leading-[1.4] text-glow-green"
+          data-text="¡LA BATALLA LLEGA A TU FIESTA!"
+          style={{ fontSize: "clamp(1.1rem, 4.5vw, 2.75rem)" }}
+        >
+          ¡LA BATALLA LLEGA A TU FIESTA!
+        </h1>
+
+        <p className="mx-auto mt-8 max-w-2xl font-display text-base font-medium uppercase tracking-wide text-white/80 sm:text-xl">
+          Guerras de Nerf y Gelfire a domicilio en Chihuahua •{" "}
+          <span className={`text-${accent}`}>Llevamos toda la arena hasta tu lugar</span>
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href="#paquetes"
+            className="btn-shoot border-2 border-neon-green bg-neon-green/15 px-6 py-3 font-pixel text-[10px] uppercase text-neon-green text-glow-green glow-green min-h-12"
+          >
+            ▶ VER PAQUETES
+          </a>
+          <a
+            href="#como-funciona"
+            className="btn-shoot border-2 border-white/40 bg-transparent px-6 py-3 font-pixel text-[10px] uppercase text-white hover:border-white min-h-12"
+          >
+            ¿CÓMO FUNCIONA?
+          </a>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Countdown />
+        </div>
+
+        {/* Sketch silhouettes */}
+        <div className="relative mx-auto mt-12 max-w-3xl">
+          <svg viewBox="0 0 600 180" className="w-full" aria-hidden>
+            <defs>
+              <linearGradient id="ground" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="#39FF14" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#39FF14" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <line x1="0" y1="160" x2="600" y2="160" stroke="url(#ground)" strokeWidth="2" />
+            {/* Soldier 1 */}
+            <g stroke="#39FF14" strokeWidth="2.2" fill="none" strokeLinecap="round">
+              <circle cx="100" cy="70" r="14" />
+              <path d="M100 84 L100 130 M100 100 L130 95 L150 100 M100 100 L75 110 M100 130 L85 160 M100 130 L115 160" />
+              <rect x="130" y="90" width="28" height="6" fill="#39FF14" opacity="0.7" />
+              <circle cx="100" cy="65" r="4" fill="#FF6600" opacity="0.7" />
+            </g>
+            {/* Soldier 2 */}
+            <g stroke="#00BFFF" strokeWidth="2.2" fill="none" strokeLinecap="round">
+              <circle cx="300" cy="60" r="14" />
+              <path d="M300 74 L300 124 M300 90 L275 100 L255 96 M300 90 L325 102 M300 124 L285 158 M300 124 L315 158" />
+              <rect x="240" y="92" width="22" height="6" fill="#00BFFF" opacity="0.7" />
+            </g>
+            {/* Soldier 3 */}
+            <g stroke="#FF6600" strokeWidth="2.2" fill="none" strokeLinecap="round">
+              <circle cx="490" cy="78" r="14" />
+              <path d="M490 92 L490 138 M490 108 L520 100 L540 105 M490 108 L465 120 M490 138 L478 162 M490 138 L502 162" />
+              <rect x="520" y="96" width="26" height="6" fill="#FF6600" opacity="0.7" />
+            </g>
+            {/* Pixel explosions */}
+            <g fill="#FF6600">
+              <rect x="200" y="40" width="8" height="8" />
+              <rect x="208" y="32" width="8" height="8" />
+              <rect x="216" y="40" width="8" height="8" />
+              <rect x="208" y="48" width="8" height="8" />
+            </g>
+            <g fill="#39FF14">
+              <rect x="400" y="120" width="6" height="6" />
+              <rect x="406" y="114" width="6" height="6" />
+              <rect x="412" y="120" width="6" height="6" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Steps ---------------- */
+export function Steps() {
+  const steps = [
+    { icon: "📞", title: "Elige y reserva", desc: "Selecciona tu paquete y aparta la fecha con anticipo." },
+    { icon: "🚚", title: "Llegamos y montamos", desc: "Vamos a tu lugar y montamos toda la arena lista para la guerra." },
+    { icon: "🎯", title: "¡A jugar!", desc: "Nuestros moderadores organizan los modos de juego. Tú solo disfruta." },
+  ];
+  return (
+    <section id="como-funciona" className="relative bg-black py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <Reveal className="text-center">
+          <p className="font-pixel text-[10px] text-neon-blue text-glow-blue">[ HOW IT WORKS ]</p>
+          <h2 className="mt-4 font-pixel text-xl leading-relaxed sm:text-2xl text-white">
+            CÓMO <span className="text-neon-green text-glow-green">FUNCIONA</span>
+          </h2>
+        </Reveal>
+
+        <div className="relative mt-16 grid gap-10 md:grid-cols-3">
+          <div className="connector absolute left-[10%] right-[10%] top-[42px] hidden h-[2px] md:block" />
+          {steps.map((s, i) => (
+            <Reveal key={s.title} className="relative text-center">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center border-2 border-neon-green bg-black text-3xl glow-green">
+                {s.icon}
+              </div>
+              <p className="mt-4 font-pixel text-[10px] text-neon-green">PASO 0{i + 1}</p>
+              <h3 className="mt-2 font-display text-2xl font-bold uppercase text-white">{s.title}</h3>
+              <p className="mt-2 font-body text-sm text-white/70">{s.desc}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Stats ---------------- */
+export function Stats() {
+  const stats = [
+    { icon: "🎯", value: 200, suffix: "+", label: "Batallas realizadas", color: "text-neon-green" },
+    { icon: "😄", value: 500, suffix: "+", label: "Niños felices", color: "text-neon-blue" },
+    { icon: "⚡", value: 2, suffix: " hrs", label: "De diversión", color: "text-neon-orange" },
+    { icon: "🏙️", value: 100, suffix: "%", label: "Cobertura Chihuahua", color: "text-neon-green" },
+  ];
+  return (
+    <section className="relative border-y border-neon-green/30 bg-surface py-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4">
+        {stats.map((s) => (
+          <Reveal key={s.label} className="text-center">
+            <div className="text-3xl">{s.icon}</div>
+            <div className={`mt-2 font-pixel text-2xl sm:text-3xl ${s.color} text-glow-green`}>
+              <Counter to={s.value} suffix={s.suffix} />
+            </div>
+            <div className="mt-2 font-display text-xs font-semibold uppercase tracking-wider text-white/70">
+              {s.label}
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Packages ---------------- */
+export function Packages({ onReserve }: { onReserve: (name: string) => void }) {
+  return (
+    <section id="paquetes" className="relative bg-black py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <Reveal className="text-center">
+          <p className="font-pixel text-[10px] text-neon-orange text-glow-orange">[ SELECT LOADOUT ]</p>
+          <h2 className="mt-4 font-pixel text-xl leading-relaxed sm:text-2xl text-white">
+            ELIGE TU <span className="text-neon-green text-glow-green">PAQUETE</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl font-body text-sm text-white/60">
+            Tres niveles de batalla. Todos incluyen servicio a domicilio y montaje completo en Chihuahua.
+          </p>
+        </Reveal>
+
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
+          {PACKAGES.map((p) => {
+            const a = accentMap[p.accent];
+            return (
+              <Reveal key={p.id}>
+                <div className="flip-card h-[520px] w-full">
+                  <div className="flip-inner h-full w-full">
+                    {/* FRONT */}
+                    <article
+                      className={`flip-face flex h-full flex-col border-2 ${a.border} bg-surface p-6 ${a.glow}`}
+                    >
+                      <div className="flex items-start justify-between">
+                        <span className={`font-pixel text-[9px] ${a.text}`}>{p.badge}</span>
+                        <span className="border border-white/20 px-2 py-1 font-pixel text-[8px] text-white/70">
+                          {p.age}
+                        </span>
+                      </div>
+
+                      <div className="mt-6 flex-1">
+                        <h3 className={`font-pixel text-lg ${a.text} ${a.textGlow}`}>{p.name}</h3>
+                        <p className="mt-4 font-display text-3xl font-bold text-white">
+                          desde <span className={a.text}>{p.price}</span>
+                        </p>
+                        <p className="mt-1 font-body text-xs uppercase tracking-wider text-white/50">MXN</p>
+
+                        <p className="mt-6 font-body text-sm text-white/70">{p.short}</p>
+
+                        <ul className="mt-6 space-y-2 font-body text-sm text-white/80">
+                          {p.features.slice(0, 4).map((f) => (
+                            <li key={f} className="flex gap-2">
+                              <span className={a.text}>▸</span>
+                              <span>{f}</span>
+                            </li>
+                          ))}
+                          <li className="font-pixel text-[9px] text-white/40">+ HOVER PARA VER TODO</li>
+                        </ul>
+                      </div>
+
+                      <button
+                        onClick={() => onReserve(p.name)}
+                        className={`btn-shoot mt-6 border-2 ${a.border} bg-black py-3 font-pixel text-[10px] ${a.text} ${a.textGlow}`}
+                      >
+                        ▶ RESERVAR
+                      </button>
+                    </article>
+
+                    {/* BACK */}
+                    <article
+                      className={`flip-face flip-back flex h-full flex-col overflow-hidden border-2 ${a.border} bg-surface p-6 ${a.glow}`}
+                    >
+                      <h3 className={`font-pixel text-sm ${a.text} ${a.textGlow}`}>{p.name} — INCLUYE</h3>
+                      <ul className="mt-4 flex-1 space-y-2 overflow-auto pr-1 font-body text-[13px] text-white/85">
+                        {p.features.map((f) => (
+                          <li key={f} className="flex gap-2">
+                            <span className={a.text}>✓</span>
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <button
+                        onClick={() => onReserve(p.name)}
+                        className={`btn-shoot mt-4 border-2 ${a.border} bg-black py-3 font-pixel text-[10px] ${a.text} ${a.textGlow}`}
+                      >
+                        ▶ LO QUIERO
+                      </button>
+                    </article>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- About ---------------- */
+export function About() {
+  const pillars = [
+    { icon: "🛡️", title: "Seguridad", desc: "Equipo certificado, máscaras, lentes y supervisión profesional." },
+    { icon: "⚡", title: "Diversión garantizada", desc: "Modos de juego diseñados para mantener la adrenalina al máximo." },
+    { icon: "🚚", title: "Sin estrés", desc: "Llegamos, montamos, organizamos y nos llevamos todo. Tú disfrutas." },
+  ];
+  return (
+    <section id="nosotros" className="relative camo py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
+        <Reveal>
+          <p className="font-pixel text-[10px] text-neon-blue text-glow-blue">[ ABOUT US ]</p>
+          <h2 className="mt-4 font-pixel text-xl leading-relaxed text-white sm:text-2xl">
+            SOMOS <span className="text-neon-green text-glow-green">ELITE ARENA</span>
+          </h2>
+          <p className="mt-6 font-body text-base text-white/75">
+            Nacimos en Chihuahua con una obsesión: convertir cualquier fiesta en una
+            <span className="text-neon-green"> experiencia épica</span>. Llevamos años montando arenas
+            móviles para cumpleaños, graduaciones y eventos empresariales. Nuestro equipo es
+            profesional, el setup es serio y la diversión está garantizada.
+          </p>
+          <p className="mt-4 font-body text-base text-white/75">
+            Tú pones la fiesta, nosotros ponemos la <span className="text-neon-orange">guerra</span>.
+          </p>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            {pillars.map((p) => (
+              <div key={p.title} className="border border-white/15 bg-black/50 p-4">
+                <div className="text-2xl">{p.icon}</div>
+                <p className="mt-3 font-pixel text-[10px] text-neon-green">{p.title.toUpperCase()}</p>
+                <p className="mt-2 font-body text-xs text-white/70">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="relative aspect-square w-full max-w-md mx-auto border-2 border-neon-green/40 bg-black p-6 glow-green">
+            <svg viewBox="0 0 300 300" className="h-full w-full" aria-hidden>
+              {/* Cartoon team sketch */}
+              <g stroke="#39FF14" strokeWidth="2.5" fill="none" strokeLinecap="round">
+                <circle cx="80" cy="100" r="22" />
+                <path d="M80 122 L80 200 M80 150 L120 140 L150 150 M80 150 L50 165 M80 200 L62 250 M80 200 L100 250" />
+                <rect x="120" y="135" width="40" height="10" fill="#39FF14" opacity="0.5" />
+              </g>
+              <g stroke="#00BFFF" strokeWidth="2.5" fill="none" strokeLinecap="round">
+                <circle cx="200" cy="115" r="22" />
+                <path d="M200 137 L200 215 M200 165 L165 155 L140 160 M200 165 L235 175 M200 215 L182 260 M200 215 L218 260" />
+                <rect x="125" y="150" width="35" height="10" fill="#00BFFF" opacity="0.5" />
+              </g>
+              <g fill="#FF6600">
+                <rect x="148" y="60" width="6" height="6" />
+                <rect x="154" y="54" width="6" height="6" />
+                <rect x="160" y="60" width="6" height="6" />
+                <rect x="154" y="66" width="6" height="6" />
+              </g>
+              <text x="150" y="290" textAnchor="middle" fill="#39FF14" fontFamily="Press Start 2P" fontSize="10">
+                TEAM ELITE
+              </text>
+            </svg>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Gallery ---------------- */
+export function Gallery() {
+  const tiles = Array.from({ length: 6 }).map((_, i) => ({
+    id: i,
+    g: [
+      "from-neon-green/30 to-neon-blue/20",
+      "from-neon-orange/30 to-neon-green/20",
+      "from-neon-blue/30 to-neon-orange/20",
+      "from-neon-green/40 to-black",
+      "from-neon-blue/40 to-black",
+      "from-neon-orange/40 to-black",
+    ][i],
+    label: ["Captura la bandera", "Setup arena", "Equipo Gelfire", "Free for all", "Premiación", "Team Élite"][i],
+  }));
+
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <section id="galeria" className="relative bg-black py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <Reveal className="text-center">
+          <p className="font-pixel text-[10px] text-neon-green text-glow-green">[ COMBAT GALLERY ]</p>
+          <h2 className="mt-4 font-pixel text-xl leading-relaxed text-white sm:text-2xl">
+            BATALLAS <span className="text-neon-orange text-glow-orange">RECIENTES</span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
+          {tiles.map((t) => (
+            <Reveal key={t.id}>
+              <button
+                onClick={() => setOpen(t.id)}
+                className={`group relative block aspect-square w-full overflow-hidden border border-white/20 bg-gradient-to-br ${t.g}`}
+              >
+                <div className="absolute inset-0 flex items-center justify-center font-pixel text-[10px] text-white/80">
+                  📸 {t.label}
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-neon-green/0 opacity-0 transition group-hover:bg-neon-green/30 group-hover:opacity-100">
+                  <span className="font-pixel text-xs text-black">VER ▸</span>
+                </div>
+              </button>
+            </Reveal>
+          ))}
+        </div>
+
+        <p className="mt-8 text-center font-body text-sm text-white/60">
+          ¿Quieres ver más? Síguenos en Instagram{" "}
+          <a href="#" className="text-neon-green text-glow-green underline">
+            @EliteArenaMx
+          </a>
+        </p>
+      </div>
+
+      {open !== null && (
+        <div
+          onClick={() => setOpen(null)}
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-4 backdrop-blur"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className={`relative aspect-square w-full max-w-2xl border-2 border-neon-green bg-gradient-to-br ${tiles[open].g} glow-green`}
+          >
+            <button
+              onClick={() => setOpen(null)}
+              className="absolute right-3 top-3 border border-neon-green bg-black px-3 py-1 font-pixel text-[10px] text-neon-green"
+            >
+              ✕ CERRAR
+            </button>
+            <div className="flex h-full items-center justify-center font-pixel text-sm text-white">
+              📸 {tiles[open].label}
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/* ---------------- Policies ---------------- */
+export function Policies() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  return (
+    <section id="politicas" className="relative bg-surface py-20 sm:py-28">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <Reveal className="text-center">
+          <p className="font-pixel text-[10px] text-neon-blue text-glow-blue">[ RULES OF ENGAGEMENT ]</p>
+          <h2 className="mt-4 font-pixel text-xl leading-relaxed text-white sm:text-2xl">
+            POLÍTICAS Y <span className="text-neon-green text-glow-green">REGLAS</span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-10 space-y-3">
+          {POLICIES.map((p, i) => {
+            const isOpen = openIdx === i;
+            return (
+              <Reveal key={p.q}>
+                <div className={`border ${isOpen ? "border-neon-green" : "border-white/15"} bg-black`}>
+                  <button
+                    onClick={() => setOpenIdx(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between px-5 py-4 text-left"
+                  >
+                    <span className="font-display text-base font-semibold uppercase tracking-wider text-white">
+                      {p.q}
+                    </span>
+                    <span className={`font-pixel text-sm ${isOpen ? "text-neon-green" : "text-white/60"}`}>
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={`grid overflow-hidden transition-all duration-300 ${
+                      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-5 pb-5 font-body text-sm text-white/75">{p.a}</p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Contact ---------------- */
+export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?: string }) {
+  const [pkg, setPkg] = useState(prefill ?? "");
+  useEffect(() => { if (prefill) setPkg(prefill); }, [prefill]);
+
+  return (
+    <section id="contacto" className="relative bg-black py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <Reveal className="text-center">
+          <div className="inline-flex items-center gap-3">
+            <span className="font-pixel text-2xl text-neon-green crosshair-pulse">⊕</span>
+            <h2 className="font-pixel text-lg sm:text-2xl text-white">
+              ¿LISTO PARA LA <span className="text-neon-orange text-glow-orange">BATALLA</span>?
+            </h2>
+            <span className="font-pixel text-2xl text-neon-green crosshair-pulse">⊕</span>
+          </div>
+          <p className="mx-auto mt-4 max-w-xl font-body text-sm text-white/60">
+            Cuéntanos de tu evento. Respondemos en menos de 2 horas.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+          <Reveal>
+            <form
+              onSubmit={(e) => { e.preventDefault(); onSubmit(); }}
+              className="border-2 border-neon-green/50 bg-surface p-6 sm:p-8 glow-green"
+            >
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Nombre" name="name" required />
+                <Field label="WhatsApp" name="phone" type="tel" required />
+                <Field label="Fecha del evento" name="date" type="date" required />
+                <SelectField
+                  label="Paquete de interés"
+                  value={pkg}
+                  onChange={setPkg}
+                  options={["", "SOLDADO", "ÉLITE", "COMANDO TOTAL", "No estoy seguro"]}
+                />
+                <Field label="Número de jugadores" name="players" type="number" />
+                <Field label="Lugar (colonia)" name="place" />
+              </div>
+              <div className="mt-4">
+                <label className="font-pixel text-[9px] uppercase text-neon-green">Mensaje</label>
+                <textarea
+                  name="msg"
+                  rows={4}
+                  className="mt-2 w-full border border-white/20 bg-black p-3 font-body text-sm text-white outline-none focus:border-neon-green"
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn-shoot mt-6 w-full border-2 border-neon-orange bg-neon-orange/15 py-4 font-pixel text-xs uppercase text-neon-orange text-glow-orange glow-orange"
+              >
+                ▶ DISPARAR MENSAJE
+              </button>
+            </form>
+          </Reveal>
+
+          <Reveal className="space-y-4">
+            <ContactCard icon="📱" title="WhatsApp" sub="Respuesta directa" cta="+52 614 000 0000" color="green" href="https://wa.me/" />
+            <ContactCard icon="📍" title="Ubicación" sub="Servicio a domicilio" cta="Chihuahua, Chih., México" color="blue" />
+            <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@EliteArenaMx" color="orange" href="#" />
+            <div className="border border-white/15 bg-surface p-5">
+              <p className="font-pixel text-[9px] text-neon-green text-glow-green">⏱ TIEMPO DE RESPUESTA</p>
+              <p className="mt-2 font-display text-lg font-bold text-white">Menos de 2 horas</p>
+              <p className="mt-1 font-body text-xs text-white/60">Lun a Dom · 9am a 9pm</p>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+  return (
+    <div>
+      <label className="font-pixel text-[9px] uppercase text-neon-green">{label}</label>
+      <input
+        name={name}
+        type={type}
+        required={required}
+        className="mt-2 w-full border border-white/20 bg-black p-3 font-body text-sm text-white outline-none focus:border-neon-green"
+      />
+    </div>
+  );
+}
+
+function SelectField({ label, value, onChange, options }: { label: string; value: string; onChange: (v: string) => void; options: string[] }) {
+  return (
+    <div>
+      <label className="font-pixel text-[9px] uppercase text-neon-green">{label}</label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-2 w-full border border-white/20 bg-black p-3 font-body text-sm text-white outline-none focus:border-neon-green"
+      >
+        {options.map((o) => (
+          <option key={o} value={o}>{o || "Selecciona…"}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function ContactCard({
+  icon, title, sub, cta, color, href,
+}: { icon: string; title: string; sub: string; cta: string; color: "green" | "blue" | "orange"; href?: string }) {
+  const a = accentMap[color];
+  const Comp: React.ElementType = href ? "a" : "div";
+  return (
+    <Comp
+      href={href}
+      target={href?.startsWith("http") ? "_blank" : undefined}
+      rel="noreferrer"
+      className={`block border-2 ${a.border} bg-surface p-5 transition hover:bg-black ${a.glow}`}
+    >
+      <div className="flex items-center gap-4">
+        <div className={`text-3xl`}>{icon}</div>
+        <div>
+          <p className={`font-pixel text-[9px] ${a.text}`}>{title.toUpperCase()}</p>
+          <p className="mt-1 font-display text-base font-bold text-white">{cta}</p>
+          <p className="font-body text-xs text-white/60">{sub}</p>
+        </div>
+      </div>
+    </Comp>
+  );
+}
+
+/* ---------------- Footer ---------------- */
+export function Footer() {
+  const [easter, setEaster] = useState(false);
+  return (
+    <footer className="relative border-t border-neon-green/40 bg-black py-12 overflow-hidden">
+      {easter && (
+        <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
+          <div className="dart-fly absolute top-1/2 -translate-y-1/2 font-pixel text-2xl text-neon-green text-glow-green">
+            ▶▶▶━━━
+          </div>
+        </div>
+      )}
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-3">
+        <div>
+          <button
+            onClick={() => { setEaster(true); setTimeout(() => setEaster(false), 1500); }}
+            className="font-pixel text-sm text-white"
+          >
+            <span className="text-neon-green text-glow-green">⚔</span> ELITE <span className="text-neon-green">ARENA</span>
+          </button>
+          <p className="mt-3 font-body text-sm text-white/60">Llevamos la batalla a tu puerta.</p>
+          <div className="mt-4 flex gap-3 font-pixel text-xs">
+            <a href="#" className="border border-neon-green/50 px-3 py-2 text-neon-green hover:bg-neon-green hover:text-black">IG</a>
+            <a href="#" className="border border-neon-blue/50 px-3 py-2 text-neon-blue hover:bg-neon-blue hover:text-black">FB</a>
+            <a href="#" className="border border-neon-orange/50 px-3 py-2 text-neon-orange hover:bg-neon-orange hover:text-black">TT</a>
+          </div>
+        </div>
+        <div>
+          <p className="font-pixel text-[10px] text-neon-green">NAVEGAR</p>
+          <ul className="mt-3 space-y-2 font-body text-sm text-white/70">
+            <li><a href="#paquetes" className="hover:text-neon-green">Paquetes</a></li>
+            <li><a href="#nosotros" className="hover:text-neon-green">Nosotros</a></li>
+            <li><a href="#galeria" className="hover:text-neon-green">Galería</a></li>
+            <li><a href="#politicas" className="hover:text-neon-green">Políticas</a></li>
+            <li><a href="#contacto" className="hover:text-neon-green">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <p className="font-pixel text-[10px] text-neon-orange">CONTACTO</p>
+          <ul className="mt-3 space-y-2 font-body text-sm text-white/70">
+            <li>📱 +52 614 000 0000</li>
+            <li>📍 Chihuahua, Chih., México</li>
+            <li>📸 @EliteArenaMx</li>
+          </ul>
+        </div>
+      </div>
+      <p className="mt-10 text-center font-pixel text-[9px] text-white/40">
+        © 2025 ELITE ARENA · CHIHUAHUA, MÉXICO
+      </p>
+    </footer>
+  );
+}
