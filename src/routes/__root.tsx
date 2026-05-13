@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Elite Zone | Gel Blaster Battle Arena CUU" },
+      { name: "description", content: "Elite Arena Blast offers mobile-first Nerf and Gelfire battles at your location in Chihuahua, Mexico." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Elite Zone | Gel Blaster Battle Arena CUU" },
+      { property: "og:description", content: "Elite Arena Blast offers mobile-first Nerf and Gelfire battles at your location in Chihuahua, Mexico." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Elite Zone | Gel Blaster Battle Arena CUU" },
+      { name: "twitter:description", content: "Elite Arena Blast offers mobile-first Nerf and Gelfire battles at your location in Chihuahua, Mexico." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/HrAgLe2WK6YeBzHJTaQXLSLplXk2/social-images/social-1778714248742-PNG.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/HrAgLe2WK6YeBzHJTaQXLSLplXk2/social-images/social-1778714248742-PNG.webp" },
     ],
     links: [
       {
