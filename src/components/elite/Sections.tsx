@@ -514,6 +514,39 @@ export function Policies() {
   );
 }
 
+/* ---------------- Snacks CTA ---------------- */
+export function SnacksCTA() {
+  return (
+    <section className="relative bg-black py-24 sm:py-32">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal>
+          <div className="relative overflow-hidden border-2 border-neon-orange bg-surface p-8 sm:p-14 text-center glow-orange">
+            <div className="pointer-events-none absolute -top-10 -left-10 text-7xl opacity-10">🍿</div>
+            <div className="pointer-events-none absolute -bottom-10 -right-10 text-7xl opacity-10">🥤</div>
+
+            <p className="font-pixel text-base text-neon-blue text-glow-blue tracking-[0.3em]">[ POWER-UP ]</p>
+            <h2 className="mt-4 font-pixel text-4xl sm:text-6xl leading-none text-white tracking-wide">
+              ¿COMPLEMENTAS TU EVENTO CON <span className="text-neon-orange text-glow-orange">SNACKS</span> Y <span className="text-neon-green text-glow-green">BEBIDAS</span>?
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl font-body text-lg text-white/80">
+              Lleva un carrito de snacks completo a tu fiesta con <span className="font-bold text-white">La Botana Rodante</span>. Paquetes de eventos con botanas, dulces y bebidas para todos los jugadores.
+            </p>
+
+            <a
+              href="https://labotanarodantecuu.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-shoot mt-9 inline-block border-2 border-neon-orange bg-neon-orange/15 px-10 py-5 font-pixel text-xl sm:text-2xl uppercase text-neon-orange text-glow-orange tracking-widest"
+            >
+              🛒 VER LA BOTANA RODANTE ▸
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Contact ---------------- */
 export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?: string }) {
   const [pkg, setPkg] = useState(prefill ?? "");
