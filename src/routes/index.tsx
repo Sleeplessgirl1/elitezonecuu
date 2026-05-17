@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "@/components/elite/Navbar";
 import { LoadingScreen, TacticalCursor, Toast } from "@/components/elite/Effects";
 import {
-  About, Contact, Footer, Gallery, Hero, Packages, Policies, Stats, Steps,
+  About, Contact, Footer, Gallery, Hero, Packages, Policies, SnacksCTA, Stats, Steps,
 } from "@/components/elite/Sections";
 
 export const Route = createFileRoute("/")({
@@ -61,6 +61,7 @@ function Index() {
         <About />
         <Gallery />
         <Policies />
+        <SnacksCTA />
         <Contact onSubmit={() => setToast("MENSAJE ENVIADO ▸ TE CONTACTAMOS PRONTO")} prefill={pkgPrefill} />
       </main>
       <Footer />
