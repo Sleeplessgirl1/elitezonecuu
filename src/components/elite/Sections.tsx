@@ -488,7 +488,7 @@ export function Gallery() {
     { img: g1, label: "Captura la bandera" },
     { img: g2, label: "Equipo Gelfire" },
     { img: g3, label: "Setup arena" },
-    { img: g4, label: "Premiación" },
+    { img: g4, label: "Acción en arena" },
     { img: g5, label: "Arsenal" },
     { img: g6, label: "Francotirador" },
   ];
