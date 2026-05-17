@@ -442,7 +442,7 @@ export function About() {
         <Reveal>
           <p className="font-pixel text-base text-neon-blue text-glow-blue tracking-[0.3em]">[ ABOUT US ]</p>
           <h2 className="mt-4 font-pixel text-5xl sm:text-7xl leading-none text-white tracking-wide">
-            SOMOS <span className="text-neon-green text-glow-green">ELITE ARENA</span>
+            SOMOS <span className="text-neon-green text-glow-green">ELITE zone</span>
           </h2>
           <p className="mt-7 font-body text-lg text-white/80">
             Nacimos en Chihuahua con una obsesión: convertir cualquier fiesta en una
