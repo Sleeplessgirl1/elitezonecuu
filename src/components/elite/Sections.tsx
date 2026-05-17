@@ -10,79 +10,125 @@ import g5 from "@/assets/real-5.jpg";
 import g6 from "@/assets/hero-battle.jpg";
 import logo from "@/assets/logo.png";
 
-const PACKAGES = [
+const NERF_PACKAGES = [
   {
-    id: "soldado",
-    name: "SOLDADO",
-    price: "$2,800",
-    accent: "blue" as const,
-    age: "6–12 años",
-    badge: "BÁSICO",
-    short: "Tu primer despliegue. Todo el equipo Nerf clásico para iniciar la batalla.",
-    features: [
-      "Dardos de Nerf clásicos",
-      "5 vs 5 (10 jugadores)",
-      "~2 hrs de juego",
-      "Armas Nerf para todos",
-      "Chalecos de protección",
-      "Lentes de seguridad",
-      "1 moderador del juego",
-      "Captura la bandera + Free for All",
-      "Obstáculos básicos inflables",
-      "Mesa: agua y agua de limón",
-      "Servicio a domicilio en Chihuahua",
-    ],
-  },
-  {
-    id: "elite",
-    name: "ÉLITE",
-    price: "$4,200",
+    id: "recluta",
+    name: "RECLUTA",
+    price: "$2,600",
     accent: "green" as const,
-    age: "8–16 años",
-    badge: "MÁS POPULAR",
-    short: "El paquete favorito. Gelfire, máscaras pro y más modos de juego.",
+    capacity: "Hasta 10 jugadores",
+    duration: "60 min",
+    badge: "INICIAL",
     features: [
-      "Todo lo del paquete Soldado",
-      "Modalidad Gelfire (gel hidratado)",
-      "Chalecos premium + máscaras",
-      "2 moderadores",
-      "Obstáculos avanzados + mini inflables",
-      "Modos: Team Deathmatch + VIP Escort",
-      "Snacks ligeros + agua de sabores",
-      "Decoración temática militar-neón",
-      "1 hora extra opcional (+costo)",
+      "10 blasters Nerf",
+      "Munición ilimitada",
+      "Bunkers inflables",
+      "Gafas de protección",
+      "Chaleco táctico por equipo",
+      "Árbitro incluido",
+      "3 modos de juego",
+      "Agua fresca 4 lt a elegir",
     ],
   },
   {
-    id: "comando",
-    name: "COMANDO TOTAL",
-    price: "$6,800",
+    id: "comandante-nerf",
+    name: "COMANDANTE",
+    price: "$3,100",
     accent: "orange" as const,
-    age: "Todas las edades",
-    badge: "PREMIUM",
-    short: "La experiencia definitiva. Foto + video, ambos arsenales y arena completa.",
+    capacity: "Hasta 14 jugadores",
+    duration: "120 min",
+    badge: "MÁS POPULAR",
     features: [
-      "Todo lo del paquete Élite",
-      "Cobertura fotográfica profesional",
-      "Filmación de momentos épicos",
-      "Nerf clásico + Gelfire",
-      "Equipo premium (máscaras tácticas)",
-      "Arena inflable temática completa",
-      "Todos los modos disponibles",
-      "2 hrs + 30 min cierre/premiación",
-      "Mesa premium: bebidas, snacks, fruta",
-      "Medallas pixel para ganadores",
-      "Coordinator de fiesta dedicado",
+      "14 blasters Nerf",
+      "Munición ilimitada",
+      "Bunkers inflables",
+      "Gafas de protección",
+      "Chaleco táctico por equipo",
+      "Árbitro + asistente",
+      "5 modos de juego",
+      "Pintura facial militar",
+      "Agua fresca 4 lt + 4 lt a elegir",
     ],
   },
 ];
 
+const GEL_PACKAGES = [
+  {
+    id: "comandante-gel",
+    name: "COMANDANTE",
+    price: "$3,000",
+    accent: "blue" as const,
+    capacity: "Hasta 12 jugadores",
+    duration: "60 min",
+    badge: "INICIAL",
+    features: [
+      "12 Gel Blasters Gelfire",
+      "15,000 gellets incluidos",
+      "Bunkers inflables",
+      "Gafas de protección",
+      "Chaleco táctico por equipo",
+      "Árbitro incluido",
+      "3 modos de juego",
+    ],
+  },
+  {
+    id: "fuerzas-especiales",
+    name: "FUERZAS ESPECIALES",
+    price: "$3,800",
+    accent: "green" as const,
+    capacity: "Hasta 14 jugadores",
+    duration: "90 min",
+    badge: "MÁS POPULAR",
+    features: [
+      "14 Gel Blasters Gelfire",
+      "20,000 gellets incluidos",
+      "Bunkers inflables",
+      "Gafas de protección",
+      "Chaleco táctico por equipo",
+      "Árbitro incluido",
+      "5 modos de juego",
+      "Pintura facial militar",
+      "Fotos del evento",
+      "Agua fresca 4 lt + 4 lt a elegir",
+    ],
+  },
+  {
+    id: "elite-total",
+    name: "ÉLITE TOTAL",
+    price: "$4,300",
+    accent: "orange" as const,
+    capacity: "Hasta 16 jugadores",
+    duration: "2 horas",
+    badge: "PREMIUM",
+    features: [
+      "16 Gel Blasters Gelfire",
+      "30,000 gellets incluidos",
+      "Bunkers inflables",
+      "Gafas de protección",
+      "Chaleco táctico por equipo",
+      "Árbitro incluido",
+      "Todos los modos de juego",
+      "Pintura facial militar",
+      "Fotos del evento",
+      "Agua fresca 4 lt + 4 lt a elegir",
+    ],
+  },
+];
+
+const ADDONS = [
+  { name: "Jugador extra", price: "+$180 MXN c/u" },
+  { name: "30 minutos adicionales", price: "+$600 MXN" },
+  { name: "5,000 gellets extra", price: "+$300 MXN" },
+  { name: "Upgrade Nerf → Gelfire", price: "+$700 MXN" },
+];
+
 const POLICIES = [
-  { q: "Reservaciones y pagos", a: "Anticipo del 50% para apartar fecha. Liquidación el día del evento. Cancelaciones con más de 48 hrs reciben reembolso del anticipo o reagendamiento." },
-  { q: "Seguridad", a: "Supervisión adulta obligatoria durante toda la batalla. Uso correcto de lentes, chalecos y máscaras. Nuestros moderadores aplican las reglas en todo momento." },
-  { q: "Responsabilidades", a: "Espacio mínimo de 8x8 metros (jardín, patio, terraza o salón). En caso de lluvia se reagenda sin costo si no hay área techada disponible." },
-  { q: "Edad y participantes", a: "Edad mínima 6 años. Capacidad recomendada de 8 a 20 jugadores según paquete. Grupos más grandes se cotizan personalizado." },
-  { q: "Daños al equipo", a: "Equipo profesional incluido. Daños por mal uso intencional generan un cargo proporcional. El desgaste normal corre por nuestra cuenta." },
+  { q: "Anticipo y reserva", a: "Anticipo del 30% no reembolsable para confirmar la fecha del evento. Liquidación el día del montaje." },
+  { q: "Cambios de fecha", a: "Cambios de fecha aceptados con un aviso mínimo de 72 horas previas al evento." },
+  { q: "Mínimo de jugadores", a: "Mínimo 10 jugadores por evento para garantizar la mejor experiencia de batalla." },
+  { q: "Traslado y cobertura", a: "Traslado incluido dentro de Chihuahua ciudad. Zonas foráneas se cotizan por separado." },
+  { q: "Espacio del evento", a: "El cliente provee el espacio para el evento (jardín, patio, terraza o salón). Espacio mínimo recomendado: 7 x 10 metros." },
+  { q: "Precios", a: "Precios sujetos a ajuste sin previo aviso. Tu cotización confirmada respeta el precio del momento de la reserva." },
 ];
 
 const accentMap = {
@@ -239,6 +285,56 @@ export function Stats() {
 }
 
 /* ---------------- Packages ---------------- */
+type Pkg = {
+  id: string;
+  name: string;
+  price: string;
+  accent: "green" | "blue" | "orange";
+  capacity: string;
+  duration: string;
+  badge: string;
+  features: string[];
+};
+
+function PackageCard({ p, onReserve }: { p: Pkg; onReserve: (n: string) => void }) {
+  const a = accentMap[p.accent];
+  return (
+    <Reveal>
+      <article className={`flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}>
+        <div className="flex items-start justify-between gap-3">
+          <span className={`font-pixel text-sm ${a.text} ${a.textGlow} tracking-widest`}>{p.badge}</span>
+          <span className="border border-white/25 px-2.5 py-1 font-pixel text-xs text-white/80 tracking-wider text-right">
+            {p.capacity} · {p.duration}
+          </span>
+        </div>
+
+        <h3 className={`mt-6 font-pixel text-3xl sm:text-4xl ${a.text} ${a.textGlow} tracking-wide`}>{p.name}</h3>
+
+        <p className="mt-5 font-display text-4xl font-bold text-white">
+          <span className={a.text}>{p.price}</span>
+        </p>
+        <p className="mt-1 font-body text-sm uppercase tracking-wider text-white/55">MXN</p>
+
+        <ul className="mt-6 flex-1 space-y-2.5 font-body text-[15px] text-white/90">
+          {p.features.map((f) => (
+            <li key={f} className="flex gap-2">
+              <span className={a.text}>✓</span>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={() => onReserve(p.name)}
+          className={`btn-shoot mt-6 border-2 ${a.border} bg-black py-4 font-pixel text-lg ${a.text} ${a.textGlow} tracking-widest`}
+        >
+          ▶ RESERVAR
+        </button>
+      </article>
+    </Reveal>
+  );
+}
+
 export function Packages({ onReserve }: { onReserve: (name: string) => void }) {
   return (
     <section id="paquetes" className="relative bg-black py-24 sm:py-32">
@@ -248,89 +344,88 @@ export function Packages({ onReserve }: { onReserve: (name: string) => void }) {
           <h2 className="mt-4 font-pixel text-5xl sm:text-7xl leading-none text-white tracking-wide">
             ELIGE TU <span className="text-neon-green text-glow-green">PAQUETE</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl font-body text-base sm:text-lg text-white/70">
-            Tres niveles de batalla. Todos incluyen servicio a domicilio y montaje completo en Chihuahua.
+          <p className="mx-auto mt-6 max-w-2xl font-body text-base sm:text-lg text-white/70">
+            Servicio móvil en Chihuahua ciudad. Equipo, árbitro y montaje incluidos.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {PACKAGES.map((p) => {
-            const a = accentMap[p.accent];
-            return (
-              <Reveal key={p.id}>
-                <div className="flip-card h-[560px] w-full">
-                  <div className="flip-inner h-full w-full">
-                    {/* FRONT */}
-                    <article
-                      className={`flip-face flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}
-                    >
-                      <div className="flex items-start justify-between">
-                        <span className={`font-pixel text-sm ${a.text} ${a.textGlow} tracking-widest`}>{p.badge}</span>
-                        <span className="border border-white/25 px-2.5 py-1 font-pixel text-xs text-white/80 tracking-wider">
-                          {p.age}
-                        </span>
-                      </div>
+        {/* LÍNEA NERF */}
+        <div className="mt-20">
+          <Reveal>
+            <div className="border-l-4 border-neon-green pl-5">
+              <p className="font-pixel text-2xl sm:text-3xl text-neon-green text-glow-green tracking-widest">
+                🎯 LÍNEA NERF
+              </p>
+              <p className="mt-2 font-display text-lg font-bold uppercase tracking-wider text-white/85">
+                Dardos de espuma
+              </p>
+              <p className="mt-1 font-body text-sm text-white/65">
+                14 blasters disponibles · Recomendado desde 6 años · Munición ilimitada
+              </p>
+            </div>
+          </Reveal>
 
-                      <div className="mt-7 flex-1">
-                        <h3 className={`font-pixel text-4xl sm:text-5xl ${a.text} ${a.textGlow} tracking-wide`}>{p.name}</h3>
-                        <p className="mt-5 font-display text-4xl font-bold text-white">
-                          desde <span className={a.text}>{p.price}</span>
-                        </p>
-                        <p className="mt-1 font-body text-sm uppercase tracking-wider text-white/55">MXN</p>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:max-w-5xl lg:mx-auto">
+            {NERF_PACKAGES.map((p) => (
+              <PackageCard key={p.id} p={p} onReserve={onReserve} />
+            ))}
+          </div>
+        </div>
 
-                        <p className="mt-6 font-body text-base text-white/80">{p.short}</p>
+        {/* LÍNEA GELFIRE */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="border-l-4 border-neon-blue pl-5">
+              <p className="font-pixel text-2xl sm:text-3xl text-neon-blue text-glow-blue tracking-widest">
+                💧 LÍNEA GELFIRE
+              </p>
+              <p className="mt-2 font-display text-lg font-bold uppercase tracking-wider text-white/85">
+                Gel blasters
+              </p>
+              <p className="mt-1 font-body text-sm text-white/65">
+                18 blasters disponibles · Recomendado desde 10 años · Gellets incluidos por paquete
+              </p>
+            </div>
+          </Reveal>
 
-                        <ul className="mt-6 space-y-2.5 font-body text-base text-white/85">
-                          {p.features.slice(0, 4).map((f) => (
-                            <li key={f} className="flex gap-2">
-                              <span className={a.text}>▸</span>
-                              <span>{f}</span>
-                            </li>
-                          ))}
-                          <li className="font-pixel text-sm text-white/50 tracking-widest">+ HOVER PARA VER TODO</li>
-                        </ul>
-                      </div>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {GEL_PACKAGES.map((p) => (
+              <PackageCard key={p.id} p={p} onReserve={onReserve} />
+            ))}
+          </div>
+        </div>
 
-                      <button
-                        onClick={() => onReserve(p.name)}
-                        className={`btn-shoot mt-6 border-2 ${a.border} bg-black py-4 font-pixel text-lg ${a.text} ${a.textGlow} tracking-widest`}
-                      >
-                        ▶ RESERVAR
-                      </button>
-                    </article>
+        {/* ADD-ONS */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="border-l-4 border-neon-orange pl-5">
+              <p className="font-pixel text-2xl sm:text-3xl text-neon-orange text-glow-orange tracking-widest">
+                ➕ ADD-ONS
+              </p>
+              <p className="mt-2 font-display text-lg font-bold uppercase tracking-wider text-white/85">
+                Personaliza tu experiencia
+              </p>
+              <p className="mt-1 font-body text-sm text-white/65">
+                Disponibles para cualquier paquete.
+              </p>
+            </div>
+          </Reveal>
 
-                    {/* BACK */}
-                    <article
-                      className={`flip-face flip-back flex h-full flex-col overflow-hidden border-2 ${a.border} bg-surface p-7 ${a.glow}`}
-                    >
-                      <h3 className={`font-pixel text-2xl ${a.text} ${a.textGlow} tracking-wide`}>{p.name} — INCLUYE</h3>
-                      <ul className="mt-4 flex-1 space-y-2.5 overflow-auto pr-1 font-body text-[15px] text-white/90">
-                        {p.features.map((f) => (
-                          <li key={f} className="flex gap-2">
-                            <span className={a.text}>✓</span>
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <button
-                        onClick={() => onReserve(p.name)}
-                        className={`btn-shoot mt-4 border-2 ${a.border} bg-black py-4 font-pixel text-lg ${a.text} ${a.textGlow} tracking-widest`}
-                      >
-                        ▶ LO QUIERO
-                      </button>
-                    </article>
-                  </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {ADDONS.map((ad) => (
+              <Reveal key={ad.name}>
+                <div className="flex h-full flex-col justify-between border-2 border-white/15 bg-surface p-6 transition hover:border-neon-orange hover:-translate-y-1">
+                  <p className="font-display text-lg font-bold uppercase tracking-wider text-white">{ad.name}</p>
+                  <p className="mt-4 font-pixel text-2xl text-neon-orange text-glow-orange tracking-widest">{ad.price}</p>
                 </div>
               </Reveal>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
-/* ---------------- About ---------------- */
 export function About() {
   const pillars = [
     { icon: "🛡️", title: "Seguridad", desc: "Equipo certificado, máscaras, lentes y supervisión profesional." },
