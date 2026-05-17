@@ -36,19 +36,19 @@ export default function Navbar({
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-2 font-pixel text-xs sm:text-sm">
+      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link to="/" className="flex items-center gap-2 font-pixel text-2xl sm:text-3xl tracking-wide">
           <span className={`${accent} text-glow-green`}>⚔</span>
           <span className="text-white">ELITE</span>
           <span className={accent}>ARENA</span>
         </Link>
 
-        <ul className="hidden items-center gap-6 lg:flex">
+        <ul className="hidden items-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-display text-sm font-semibold uppercase tracking-wider text-white/80 transition hover:text-neon-green hover:text-glow-green"
+                className="font-display text-base font-bold uppercase tracking-wider text-white/85 transition hover:text-neon-green hover:text-glow-green"
               >
                 {l.label}
               </a>
@@ -59,7 +59,7 @@ export default function Navbar({
         <div className="flex items-center gap-3">
           <button
             onClick={onToggleMode}
-            className="hidden items-center gap-2 border border-white/20 px-3 py-1.5 font-pixel text-[9px] uppercase text-white/80 transition hover:border-neon-green hover:text-neon-green md:inline-flex"
+            className="hidden items-center gap-2 border-2 border-white/25 px-3 py-2 font-pixel text-sm uppercase text-white/85 transition hover:border-neon-green hover:text-neon-green md:inline-flex tracking-widest"
             aria-label="Cambiar modo de juego"
           >
             <span className={mode === "nerf" ? "text-neon-green" : "opacity-50"}>NERF</span>
@@ -69,14 +69,14 @@ export default function Navbar({
 
           <a
             href="#contacto"
-            className="btn-shoot hidden border-2 border-neon-orange bg-neon-orange/10 px-4 py-2 font-pixel text-[10px] uppercase text-neon-orange text-glow-orange glow-orange md:inline-block"
+            className="btn-shoot hidden border-2 border-neon-orange bg-neon-orange/15 px-5 py-2.5 font-pixel text-base uppercase text-neon-orange text-glow-orange glow-orange md:inline-block tracking-widest"
           >
             ¡RESERVAR!
           </a>
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex h-10 w-10 items-center justify-center border border-neon-green/50 text-neon-green"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center border-2 border-neon-green/60 text-neon-green text-xl"
             aria-label="Menú"
           >
             {open ? "✕" : "⊕"}
@@ -90,35 +90,35 @@ export default function Navbar({
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-16 items-center justify-between border-b border-neon-green/30 px-4">
-          <span className="font-pixel text-[10px] text-neon-green">MENÚ TÁCTICO</span>
-          <button onClick={() => setOpen(false)} className="text-neon-green">✕</button>
+        <div className="flex h-20 items-center justify-between border-b-2 border-neon-green/40 px-5">
+          <span className="font-pixel text-lg text-neon-green text-glow-green tracking-widest">MENÚ TÁCTICO</span>
+          <button onClick={() => setOpen(false)} className="text-neon-green text-2xl">✕</button>
         </div>
-        <ul className="flex flex-col gap-1 p-4">
+        <ul className="flex flex-col gap-1 p-5">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block border-l-2 border-transparent px-3 py-3 font-display text-base font-semibold uppercase tracking-wide text-white transition hover:border-neon-green hover:bg-white/5 hover:text-neon-green"
+                className="block border-l-2 border-transparent px-4 py-4 font-display text-xl font-bold uppercase tracking-wide text-white transition hover:border-neon-green hover:bg-white/5 hover:text-neon-green"
               >
                 {l.label}
               </a>
             </li>
           ))}
-          <li className="mt-2">
+          <li className="mt-3">
             <button
               onClick={onToggleMode}
-              className="w-full border border-white/20 px-3 py-2 font-pixel text-[9px] uppercase text-white/80"
+              className="w-full border-2 border-white/25 px-4 py-3 font-pixel text-sm uppercase text-white/85 tracking-widest"
             >
               MODO: {mode === "nerf" ? "NERF CLÁSICO" : "GELFIRE"}
             </button>
           </li>
-          <li className="mt-2">
+          <li className="mt-3">
             <a
               href="#contacto"
               onClick={() => setOpen(false)}
-              className="btn-shoot block border-2 border-neon-orange bg-neon-orange/10 py-3 text-center font-pixel text-[10px] uppercase text-neon-orange text-glow-orange"
+              className="btn-shoot block border-2 border-neon-orange bg-neon-orange/15 py-4 text-center font-pixel text-lg uppercase text-neon-orange text-glow-orange tracking-widest"
             >
               ¡RESERVAR AHORA!
             </a>
