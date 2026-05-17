@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Counter, Countdown, Particles, Reveal } from "./Effects";
-import heroBattle from "@/assets/hero-battle.jpg";
-import teamElite from "@/assets/team-elite.jpg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import heroBattle from "@/assets/real-1.jpg";
+import teamElite from "@/assets/real-4.jpg";
+import g1 from "@/assets/real-1.jpg";
+import g2 from "@/assets/real-2.jpg";
+import g3 from "@/assets/real-3.jpg";
+import g4 from "@/assets/real-4.jpg";
+import g5 from "@/assets/real-5.jpg";
+import g6 from "@/assets/hero-battle.jpg";
 
 const PACKAGES = [
   {
@@ -657,9 +657,9 @@ export function Footer() {
         <div>
           <button
             onClick={() => { setEaster(true); setTimeout(() => setEaster(false), 1500); }}
-            className="font-pixel text-3xl text-white tracking-wide"
+            aria-label="Elite Zone"
           >
-            <span className="text-neon-green text-glow-green">⚔</span> ELITE <span className="text-neon-green">ARENA</span>
+            <img src={(new URL('@/assets/logo.png', import.meta.url)).href} alt="Elite Zone" className="h-16 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
           </button>
           <p className="mt-3 font-body text-base text-white/65">Llevamos la batalla a tu puerta.</p>
           <div className="mt-5 flex gap-3 font-pixel text-base">
