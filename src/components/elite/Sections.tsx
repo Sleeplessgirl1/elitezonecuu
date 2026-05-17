@@ -254,7 +254,7 @@ export function Steps() {
 /* ---------------- Stats ---------------- */
 export function Stats() {
   const stats = [
-    { icon: "🎯", value: 50, suffix: "+", label: "Batallas realizadas" },
+    { icon: "🎯", value: 10, suffix: "+", label: "Modos de batalla" },
     { icon: "😄", value: 500, suffix: "+", label: "Niños felices" },
     { icon: "⚡", value: 2, suffix: " HRS", label: "De diversión" },
     { icon: "🏙️", value: 100, suffix: "%", label: "Cobertura Chihuahua" },
