@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "@/components/elite/Navbar";
 import { LoadingScreen, TacticalCursor, Toast } from "@/components/elite/Effects";
 import {
-  About, Contact, Footer, Gallery, Hero, Packages, Policies, Stats, Steps,
+  About, Contact, Footer, Gallery, Hero, Packages, Policies, SnacksCTA, Stats, Steps,
 } from "@/components/elite/Sections";
 
 export const Route = createFileRoute("/")({
