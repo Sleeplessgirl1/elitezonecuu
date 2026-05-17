@@ -61,6 +61,7 @@ function Index() {
         <About />
         <Gallery />
         <Policies />
+        <SnacksCTA />
         <Contact onSubmit={() => setToast("MENSAJE ENVIADO ▸ TE CONTACTAMOS PRONTO")} prefill={pkgPrefill} />
       </main>
       <Footer />
