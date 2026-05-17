@@ -254,25 +254,35 @@ export function Steps() {
 /* ---------------- Stats ---------------- */
 export function Stats() {
   const stats = [
-    { icon: "🎯", value: 0, suffix: "📸 @elitezonecuu", label: "Batallas realizadas", color: "text-neon-green", glow: "text-glow-green" },
-    { icon: "😄", value: 500, suffix: "+", label: "Niños felices", color: "text-neon-blue", glow: "text-glow-blue" },
-    { icon: "⚡", value: 2, suffix: " hrs", label: "De diversión", color: "text-neon-orange", glow: "text-glow-orange" },
-    { icon: "🏙️", value: 100, suffix: "%", label: "Cobertura Chihuahua", color: "text-neon-green", glow: "text-glow-green" },
+    { icon: "🎯", value: 50, suffix: "+", label: "Batallas realizadas" },
+    { icon: "😄", value: 500, suffix: "+", label: "Niños felices" },
+    { icon: "⚡", value: 2, suffix: " HRS", label: "De diversión" },
+    { icon: "🏙️", value: 100, suffix: "%", label: "Cobertura Chihuahua" },
   ];
   return (
-    <section className="relative border-y-2 border-neon-green/40 bg-surface py-20">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-10 px-4 sm:px-6 lg:grid-cols-4">
+    <section className="relative border-y-2 border-neon-orange/40 bg-surface py-12 sm:py-20">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-4 sm:px-6 sm:gap-10 lg:grid-cols-4">
         {stats.map((s) => (
           <Reveal key={s.label} className="text-center">
-            <div className="text-4xl">{s.icon}</div>
-            <div className={`mt-3 font-pixel text-5xl sm:text-6xl ${s.color} ${s.glow}`}>
+            <div className="text-4xl sm:text-5xl">{s.icon}</div>
+            <div className="mt-3 font-pixel text-5xl sm:text-6xl text-neon-orange text-glow-orange leading-none">
               <Counter to={s.value} suffix={s.suffix} />
             </div>
-            <div className="mt-3 font-display text-sm sm:text-base font-bold uppercase tracking-wider text-white/80">
+            <div className="mt-3 font-display text-xs sm:text-base font-bold uppercase tracking-wider text-white/85">
               {s.label}
             </div>
           </Reveal>
         ))}
+      </div>
+      <div className="mt-10 border-t border-neon-orange/40 pt-6 text-center sm:mt-14">
+        <a
+          href="https://instagram.com/elitezonecuu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-pixel text-3xl sm:text-5xl text-neon-orange text-glow-orange tracking-widest"
+        >
+          @ELITEZONECUU
+        </a>
       </div>
     </section>
   );
