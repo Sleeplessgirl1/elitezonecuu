@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Counter, Countdown, Particles, Reveal } from "./Effects";
-import heroBattle from "@/assets/real-1.jpg";
+import heroBattle from "@/assets/real-1.png";
 import teamElite from "@/assets/real-4.jpg";
-import g1 from "@/assets/real-1.jpg";
+import g1 from "@/assets/real-1.png";
 import g2 from "@/assets/real-2.jpg";
 import g3 from "@/assets/real-3.jpg";
 import g4 from "@/assets/real-4.jpg";
