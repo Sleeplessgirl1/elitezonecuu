@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Counter, Countdown, HudButton, Particles, Reveal } from "./Effects";
 import heroBattle from "@/assets/real-1.png";
-import teamElite from "@/assets/real-4.jpg";
+import teamElite from "@/assets/instagram-elite.jpg";
 import g1 from "@/assets/real-1.png";
 import g2 from "@/assets/real-2.jpg";
 import g3 from "@/assets/real-3.jpg";
@@ -254,7 +254,7 @@ export function Steps() {
 /* ---------------- Stats ---------------- */
 export function Stats() {
   const stats = [
-    { icon: "🎯", value: 200, suffix: "+", label: "Batallas realizadas", color: "text-neon-green", glow: "text-glow-green" },
+    { icon: "🎯", value: 0, suffix: "📸 @elitezonecuu", label: "Batallas realizadas", color: "text-neon-green", glow: "text-glow-green" },
     { icon: "😄", value: 500, suffix: "+", label: "Niños felices", color: "text-neon-blue", glow: "text-glow-blue" },
     { icon: "⚡", value: 2, suffix: " hrs", label: "De diversión", color: "text-neon-orange", glow: "text-glow-orange" },
     { icon: "🏙️", value: 100, suffix: "%", label: "Cobertura Chihuahua", color: "text-neon-green", glow: "text-glow-green" },
