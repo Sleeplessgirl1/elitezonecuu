@@ -259,10 +259,8 @@ export function Countdown() {
     return () => clearInterval(t);
   }, []);
   return (
-    <div className="tactical-btn" style={{ ["--bd" as any]: "var(--neon-orange)" }}>
-      <span className="px-6 py-3 font-pixel text-sm sm:text-base text-neon-orange text-glow-orange tracking-widest whitespace-nowrap">
-        ⏱ PRÓXIMA BATALLA EN {days} DÍAS
-      </span>
-    </div>
+    <HudButton color="var(--neon-orange)" size="sm" className="whitespace-nowrap">
+      ⏱ PRÓXIMA BATALLA EN {days} DÍAS
+    </HudButton>
   );
 }
