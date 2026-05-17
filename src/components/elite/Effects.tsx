@@ -1,4 +1,81 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+
+/* ---------------- HUD Button (tactical frame with details) ---------------- */
+export function HudButton({
+  children,
+  href,
+  onClick,
+  color = "var(--neon-green)",
+  size = "md",
+  className = "",
+}: {
+  children: ReactNode;
+  href?: string;
+  onClick?: () => void;
+  color?: string;
+  size?: "sm" | "md";
+  className?: string;
+}) {
+  const pad =
+    size === "sm" ? "px-7 py-3 text-xs sm:text-sm" : "px-10 py-5 text-base sm:text-lg";
+  const Comp: any = href ? "a" : onClick ? "button" : "div";
+  return (
+    <Comp
+      href={href}
+      onClick={onClick}
+      className={`hud-btn group relative inline-flex items-center justify-center font-pixel uppercase tracking-widest ${pad} ${className}`}
+      style={{ color }}
+    >
+      {/* SVG frame */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
+        viewBox="0 0 400 100"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        {/* main outline: big chamfer top-left & bottom-right, small notch top-right & bottom-left */}
+        <path
+          d="
+            M 22 4
+            L 388 4
+            L 396 12
+            L 396 88
+            L 378 96
+            L 12 96
+            L 4 88
+            L 4 22
+            Z
+          "
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+          style={{ filter: `drop-shadow(0 0 6px ${color})` }}
+        />
+        {/* top center small dashes */}
+        <g stroke="currentColor" strokeWidth="2" vectorEffect="non-scaling-stroke">
+          <line x1="180" y1="0" x2="186" y2="0" />
+          <line x1="190" y1="0" x2="196" y2="0" />
+          <line x1="200" y1="0" x2="206" y2="0" />
+          <line x1="210" y1="0" x2="216" y2="0" />
+        </g>
+        {/* bottom center small dashes */}
+        <g stroke="currentColor" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.7">
+          <line x1="186" y1="100" x2="192" y2="100" />
+          <line x1="196" y1="100" x2="202" y2="100" />
+          <line x1="206" y1="100" x2="212" y2="100" />
+        </g>
+        {/* corner triangle indicators */}
+        <polygon points="14,14 28,14 14,28" fill="currentColor" opacity="0.9" />
+        <polygon points="386,86 372,86 386,72" fill="currentColor" opacity="0.9" />
+      </svg>
+      <span className="relative z-10" style={{ textShadow: `0 0 10px ${color}, 0 0 20px ${color}` }}>
+        {children}
+      </span>
+    </Comp>
+  );
+}
+
 
 /* ---------------- Loading screen ---------------- */
 export function LoadingScreen({ onDone }: { onDone: () => void }) {
