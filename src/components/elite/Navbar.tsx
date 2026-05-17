@@ -1,6 +1,4 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.png";
 
 const LINKS = [
   { href: "#inicio", label: "Inicio" },
@@ -38,11 +36,7 @@ export default function Navbar({
       }`}
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="Elite Zone">
-          <img src={logo} alt="Elite Zone" className="h-12 sm:h-14 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
-        </Link>
-
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden flex-1 items-center justify-center gap-8 lg:flex">
           {LINKS.map((l) => (
             <li key={l.href}>
               <a
