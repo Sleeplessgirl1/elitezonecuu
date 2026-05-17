@@ -8,6 +8,7 @@ import g3 from "@/assets/real-3.jpg";
 import g4 from "@/assets/real-4.jpg";
 import g5 from "@/assets/real-5.jpg";
 import g6 from "@/assets/hero-battle.jpg";
+import logo from "@/assets/logo.png";
 
 const PACKAGES = [
   {
@@ -659,7 +660,7 @@ export function Footer() {
             onClick={() => { setEaster(true); setTimeout(() => setEaster(false), 1500); }}
             aria-label="Elite Zone"
           >
-            <img src={(new URL('@/assets/logo.png', import.meta.url)).href} alt="Elite Zone" className="h-16 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
+            <img src={logo} alt="Elite Zone" className="h-16 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
           </button>
           <p className="mt-3 font-body text-base text-white/65">Llevamos la batalla a tu puerta.</p>
           <div className="mt-5 flex gap-3 font-pixel text-base">
