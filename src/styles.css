@@ -193,7 +193,54 @@
   100% { opacity: 0; }
 }
 
-/* ---------- Scroll reveal ---------- */
+/* ---------- Tactical clipped frame (notched corners) ---------- */
+.tactical-cut {
+  --cut: 18px;
+  position: relative;
+  clip-path: polygon(
+    var(--cut) 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut)),
+    0 var(--cut)
+  );
+}
+.tactical-btn {
+  --cut: 16px;
+  --bd: var(--neon-green);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: var(--bd);
+  clip-path: polygon(
+    var(--cut) 0, calc(100% - var(--cut)) 0,
+    100% var(--cut), 100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%, var(--cut) 100%,
+    0 calc(100% - var(--cut)), 0 var(--cut)
+  );
+  transition: filter 0.2s ease, transform 0.08s ease;
+}
+.tactical-btn:hover { filter: brightness(1.2); }
+.tactical-btn:active { transform: translate(1px, 1px); }
+.tactical-btn > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: polygon(
+    var(--cut) 0, calc(100% - var(--cut)) 0,
+    100% var(--cut), 100% calc(100% - var(--cut)),
+    calc(100% - var(--cut)) 100%, var(--cut) 100%,
+    0 calc(100% - var(--cut)), 0 var(--cut)
+  );
+}
 .reveal {
   opacity: 0;
   transform: translateY(28px);
