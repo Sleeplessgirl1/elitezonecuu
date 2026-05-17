@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Counter, Countdown, Particles, Reveal } from "./Effects";
+import { Counter, Countdown, HudButton, Particles, Reveal } from "./Effects";
 import heroBattle from "@/assets/real-1.png";
 import teamElite from "@/assets/real-4.jpg";
 import g1 from "@/assets/real-1.png";
