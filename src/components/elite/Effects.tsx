@@ -182,8 +182,10 @@ export function Countdown() {
     return () => clearInterval(t);
   }, []);
   return (
-    <div className="inline-flex items-center gap-2 border border-neon-orange/70 bg-black/60 px-4 py-2.5 font-pixel text-sm sm:text-base text-neon-orange text-glow-orange tracking-widest">
-      ⏱ PRÓXIMA BATALLA EN {days} DÍAS
+    <div className="tactical-btn" style={{ ["--bd" as any]: "var(--neon-orange)" }}>
+      <span className="px-6 py-3 font-pixel text-sm sm:text-base text-neon-orange text-glow-orange tracking-widest whitespace-nowrap">
+        ⏱ PRÓXIMA BATALLA EN {days} DÍAS
+      </span>
     </div>
   );
 }
