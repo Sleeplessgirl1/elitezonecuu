@@ -10,7 +10,7 @@ export function LoadingScreen({ onDone }: { onDone: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black">
       <div className="relative w-full max-w-md px-6">
-        <p className="font-pixel text-[10px] sm:text-xs text-neon-green mb-6 text-center text-glow-green">
+        <p className="font-pixel text-base sm:text-xl text-neon-green mb-6 text-center text-glow-green tracking-widest">
           INITIALIZING BATTLE...
         </p>
         <div className="relative h-3 w-full border border-neon-green bg-black overflow-hidden">
@@ -182,7 +182,7 @@ export function Countdown() {
     return () => clearInterval(t);
   }, []);
   return (
-    <div className="inline-flex items-center gap-2 border border-neon-orange/60 bg-black/60 px-3 py-2 font-pixel text-[9px] text-neon-orange text-glow-orange">
+    <div className="inline-flex items-center gap-2 border border-neon-orange/70 bg-black/60 px-4 py-2.5 font-pixel text-sm sm:text-base text-neon-orange text-glow-orange tracking-widest">
       ⏱ PRÓXIMA BATALLA EN {days} DÍAS
     </div>
   );
