@@ -180,15 +180,21 @@ export function Hero({ mode }: { mode: "nerf" | "gel" }) {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
             <a
               href="#paquetes"
-              className="btn-shoot border-2 border-neon-green bg-neon-green/20 px-8 py-4 font-pixel text-lg sm:text-xl uppercase text-neon-green text-glow-green glow-green tracking-widest"
+              className="tactical-btn glow-green"
+              style={{ ["--bd" as any]: "var(--neon-green)" }}
             >
-              ▶ VER PAQUETES
+              <span className="px-10 py-5 font-pixel text-lg sm:text-xl uppercase text-neon-green text-glow-green tracking-widest">
+                ▶ VER PAQUETES
+              </span>
             </a>
             <a
               href="#como-funciona"
-              className="btn-shoot border-2 border-white/50 bg-transparent px-8 py-4 font-pixel text-lg sm:text-xl uppercase text-white hover:border-white tracking-widest"
+              className="tactical-btn"
+              style={{ ["--bd" as any]: "rgba(255,255,255,0.6)" }}
             >
-              ¿CÓMO FUNCIONA?
+              <span className="px-10 py-5 font-pixel text-lg sm:text-xl uppercase text-white tracking-widest">
+                ¿CÓMO FUNCIONA?
+              </span>
             </a>
           </div>
 
