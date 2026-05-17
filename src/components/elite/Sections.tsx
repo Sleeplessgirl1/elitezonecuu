@@ -177,25 +177,13 @@ export function Hero({ mode }: { mode: "nerf" | "gel" }) {
             <span className={accent}>Llevamos toda la arena hasta tu lugar</span>
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-            <a
-              href="#paquetes"
-              className="tactical-btn glow-green"
-              style={{ ["--bd" as any]: "var(--neon-green)" }}
-            >
-              <span className="px-10 py-5 font-pixel text-lg sm:text-xl uppercase text-neon-green text-glow-green tracking-widest">
-                ▶ VER PAQUETES
-              </span>
-            </a>
-            <a
-              href="#como-funciona"
-              className="tactical-btn"
-              style={{ ["--bd" as any]: "rgba(255,255,255,0.6)" }}
-            >
-              <span className="px-10 py-5 font-pixel text-lg sm:text-xl uppercase text-white tracking-widest">
-                ¿CÓMO FUNCIONA?
-              </span>
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row lg:justify-start">
+            <HudButton href="#paquetes" color="var(--neon-green)">
+              ▶ VER PAQUETES
+            </HudButton>
+            <HudButton href="#como-funciona" color="#ffffff">
+              ¿CÓMO FUNCIONA?
+            </HudButton>
           </div>
 
           <div className="mt-10 flex justify-center lg:justify-start">
