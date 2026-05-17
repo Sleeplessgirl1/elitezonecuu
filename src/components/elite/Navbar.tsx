@@ -1,6 +1,4 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.png";
 
 const LINKS = [
   { href: "#inicio", label: "Inicio" },
