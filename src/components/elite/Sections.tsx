@@ -27,7 +27,7 @@ const NERF_PACKAGES = [
       "Chaleco táctico por equipo",
       "Árbitro incluido",
       "3 modos de juego",
-      "Agua fresca 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
   {
