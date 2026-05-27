@@ -62,7 +62,7 @@ const GEL_PACKAGES = [
     duration: "60 min",
     badge: "INICIAL",
     features: [
-      "12 Gel Blasters Gelfire",
+      "16 Gel Blasters Gelfire",
       "15,000 gellets incluidos",
       "Bunkers inflables",
       "Gafas de protección",
