@@ -37,7 +37,7 @@ const NERF_PACKAGES = [
     accent: "orange" as const,
     capacity: "Hasta 14 jugadores",
     duration: "120 min",
-    badge: "MÁS POPULAR",
+    badge: "RECOMENDADO",
     features: [
       "14 blasters Nerf",
       "Munición ilimitada",
@@ -47,7 +47,7 @@ const NERF_PACKAGES = [
       "Árbitro + asistente",
       "5 modos de juego",
       "Pintura facial militar",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
 ];
