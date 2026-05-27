@@ -820,7 +820,7 @@ export function Footer() {
         </div>
       </div>
       <p className="mt-12 text-center font-pixel text-base text-white/45 tracking-widest">
-        © 2025 ELITE ARENA · CHIHUAHUA, MÉXICO
+        © 2025 ELITE ZONE · CHIHUAHUA, MÉXICO
       </p>
     </footer>
   );
