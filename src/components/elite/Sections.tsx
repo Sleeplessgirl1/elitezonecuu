@@ -110,7 +110,7 @@ const GEL_PACKAGES = [
       "Todos los modos de juego",
       "Pintura facial militar",
       "Fotos del evento",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
 ];
