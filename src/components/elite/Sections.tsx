@@ -703,9 +703,9 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
           </Reveal>
 
           <Reveal className="space-y-4">
-            <ContactCard icon="📱" title="WhatsApp" sub="Respuesta directa" cta="+52 614 000 0000" color="green" href="https://wa.me/" />
+            <ContactCard icon="📱" title="WhatsApp" sub="Respuesta directa" cta="+52 614 515 4240" color="green" href="https://wa.me/5216145154240" />
             <ContactCard icon="📍" title="Ubicación" sub="Servicio a domicilio" cta="Chihuahua, Chih., México" color="blue" />
-            <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@EliteArenaMx" color="orange" href="#" />
+            <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@elitezonecuu" color="orange" href="https://www.instagram.com/elitezonecuu/" />
             <div className="border-2 border-white/15 bg-surface p-6">
               <p className="font-pixel text-base text-neon-green text-glow-green tracking-widest">⏱ TIEMPO DE RESPUESTA</p>
               <p className="mt-3 font-display text-2xl font-bold text-white">Menos de 2 horas</p>
