@@ -468,7 +468,7 @@ export function About() {
           <div className="frame-corners relative aspect-square w-full max-w-lg mx-auto border-2 border-neon-green/50 bg-black overflow-hidden glow-green">
             <img
               src={teamElite}
-              alt="Equipo ELITE ARENA"
+              alt="Equipo ELITE ZONE"
               className="h-full w-full object-cover"
               loading="lazy"
               width={1024}
