@@ -119,7 +119,6 @@ const ADDONS = [
   { name: "Jugador extra", price: "+$180 MXN c/u" },
   { name: "30 minutos adicionales", price: "+$600 MXN" },
   { name: "5,000 gellets extra", price: "+$300 MXN" },
-  { name: "Upgrade Nerf → Gelfire", price: "+$700 MXN" },
 ];
 
 const POLICIES = [
