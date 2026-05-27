@@ -9,13 +9,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ELITE ARENA — Batallas de Nerf y Gelfire a domicilio en Chihuahua" },
+      { title: "ELITE ZONE — Batallas de Nerf y Gelfire a domicilio en Chihuahua" },
       {
         name: "description",
         content:
           "Llevamos la arena hasta tu fiesta. Guerras de Nerf y Gelfire para niños y jóvenes en Chihuahua. Equipo, moderadores y diversión incluidos.",
       },
-      { property: "og:title", content: "ELITE ARENA — Guerras de Nerf a domicilio" },
+      { property: "og:title", content: "ELITE ZONE — Guerras de Nerf a domicilio" },
       {
         property: "og:description",
         content: "Servicio de batallas de Nerf y Gelfire en Chihuahua. Reserva tu paquete.",
