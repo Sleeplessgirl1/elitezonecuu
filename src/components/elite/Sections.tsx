@@ -537,7 +537,7 @@ export function Gallery() {
 
         <p className="mt-10 text-center font-body text-base text-white/65">
           ¿Quieres ver más? Síguenos en Instagram{" "}
-          <a href="#" className="text-neon-green text-glow-green underline font-semibold">@EliteArenaMx</a>
+          <a href="https://www.instagram.com/elitezonecuu/" target="_blank" rel="noopener noreferrer" className="text-neon-green text-glow-green underline font-semibold">@elitezonecuu</a>
         </p>
       </div>
 
