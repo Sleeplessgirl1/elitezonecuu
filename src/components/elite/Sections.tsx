@@ -27,7 +27,7 @@ const NERF_PACKAGES = [
       "Chaleco táctico por equipo",
       "Árbitro incluido",
       "3 modos de juego",
-      "Agua fresca 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
   {
@@ -37,7 +37,7 @@ const NERF_PACKAGES = [
     accent: "orange" as const,
     capacity: "Hasta 14 jugadores",
     duration: "120 min",
-    badge: "MÁS POPULAR",
+    badge: "RECOMENDADO",
     features: [
       "14 blasters Nerf",
       "Munición ilimitada",
@@ -47,7 +47,7 @@ const NERF_PACKAGES = [
       "Árbitro + asistente",
       "5 modos de juego",
       "Pintura facial militar",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
 ];
@@ -62,7 +62,7 @@ const GEL_PACKAGES = [
     duration: "60 min",
     badge: "INICIAL",
     features: [
-      "12 Gel Blasters Gelfire",
+      "16 Gel Blasters Gelfire",
       "15,000 gellets incluidos",
       "Bunkers inflables",
       "Gafas de protección",
@@ -78,9 +78,9 @@ const GEL_PACKAGES = [
     accent: "green" as const,
     capacity: "Hasta 14 jugadores",
     duration: "90 min",
-    badge: "MÁS POPULAR",
+    badge: "RECOMENDADO",
     features: [
-      "14 Gel Blasters Gelfire",
+      "16 Gel Blasters Gelfire",
       "20,000 gellets incluidos",
       "Bunkers inflables",
       "Gafas de protección",
@@ -89,7 +89,7 @@ const GEL_PACKAGES = [
       "5 modos de juego",
       "Pintura facial militar",
       "Fotos del evento",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
   {
@@ -110,7 +110,7 @@ const GEL_PACKAGES = [
       "Todos los modos de juego",
       "Pintura facial militar",
       "Fotos del evento",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
 ];
@@ -119,7 +119,6 @@ const ADDONS = [
   { name: "Jugador extra", price: "+$180 MXN c/u" },
   { name: "30 minutos adicionales", price: "+$600 MXN" },
   { name: "5,000 gellets extra", price: "+$300 MXN" },
-  { name: "Upgrade Nerf → Gelfire", price: "+$700 MXN" },
 ];
 
 const POLICIES = [
@@ -469,7 +468,7 @@ export function About() {
           <div className="frame-corners relative aspect-square w-full max-w-lg mx-auto border-2 border-neon-green/50 bg-black overflow-hidden glow-green">
             <img
               src={teamElite}
-              alt="Equipo ELITE ARENA"
+              alt="Equipo ELITE ZONE"
               className="h-full w-full object-cover"
               loading="lazy"
               width={1024}
@@ -704,9 +703,9 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
           </Reveal>
 
           <Reveal className="space-y-4">
-            <ContactCard icon="📱" title="WhatsApp" sub="Respuesta directa" cta="+52 614 000 0000" color="green" href="https://wa.me/" />
+            <ContactCard icon="📱" title="WhatsApp" sub="Respuesta directa" cta="+52 614 515 4240" color="green" href="https://wa.me/5216145154240" />
             <ContactCard icon="📍" title="Ubicación" sub="Servicio a domicilio" cta="Chihuahua, Chih., México" color="blue" />
-            <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@EliteArenaMx" color="orange" href="#" />
+            <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@elitezonecuu" color="orange" href="https://www.instagram.com/elitezonecuu/" />
             <div className="border-2 border-white/15 bg-surface p-6">
               <p className="font-pixel text-base text-neon-green text-glow-green tracking-widest">⏱ TIEMPO DE RESPUESTA</p>
               <p className="mt-3 font-display text-2xl font-bold text-white">Menos de 2 horas</p>
@@ -814,14 +813,14 @@ export function Footer() {
         <div>
           <p className="font-pixel text-lg text-neon-orange text-glow-orange tracking-widest">CONTACTO</p>
           <ul className="mt-4 space-y-2 font-body text-base text-white/75">
-            <li>📱 +52 614 000 0000</li>
+            <li>📱 +52 614 515 4240</li>
             <li>📍 Chihuahua, Chih., México</li>
             <li>📸 @EliteArenaMx</li>
           </ul>
         </div>
       </div>
       <p className="mt-12 text-center font-pixel text-base text-white/45 tracking-widest">
-        © 2025 ELITE ARENA · CHIHUAHUA, MÉXICO
+        © 2025 ELITE ZONE · CHIHUAHUA, MÉXICO
       </p>
     </footer>
   );
