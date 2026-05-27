@@ -78,9 +78,9 @@ const GEL_PACKAGES = [
     accent: "green" as const,
     capacity: "Hasta 14 jugadores",
     duration: "90 min",
-    badge: "MÁS POPULAR",
+    badge: "RECOMENDADO",
     features: [
-      "14 Gel Blasters Gelfire",
+      "16 Gel Blasters Gelfire",
       "20,000 gellets incluidos",
       "Bunkers inflables",
       "Gafas de protección",
@@ -89,7 +89,7 @@ const GEL_PACKAGES = [
       "5 modos de juego",
       "Pintura facial militar",
       "Fotos del evento",
-      "Agua fresca 4 lt + 4 lt a elegir",
+      "Agua fresca 10 lt a elegir",
     ],
   },
   {
