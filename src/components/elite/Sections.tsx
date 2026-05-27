@@ -813,7 +813,7 @@ export function Footer() {
         <div>
           <p className="font-pixel text-lg text-neon-orange text-glow-orange tracking-widest">CONTACTO</p>
           <ul className="mt-4 space-y-2 font-body text-base text-white/75">
-            <li>📱 +52 614 000 0000</li>
+            <li>📱 +52 614 515 4240</li>
             <li>📍 Chihuahua, Chih., México</li>
             <li>📸 @EliteArenaMx</li>
           </ul>
