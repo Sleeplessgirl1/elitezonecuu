@@ -815,7 +815,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 font-body text-base text-white/75">
             <li>📱 +52 614 515 4240</li>
             <li>📍 Chihuahua, Chih., México</li>
-            <li>📸 @EliteArenaMx</li>
+            <li>📸 @elitezonecuu</li>
           </ul>
         </div>
       </div>
