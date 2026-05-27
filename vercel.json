@@ -1,6 +1,9 @@
 {
-  "outputDirectory": "dist/client",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "buildCommand": "vite build",
+  "framework": null,
+  "build": {
+    "env": {
+      "DEPLOY_TARGET": "vercel"
+    }
+  }
 }

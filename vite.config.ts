@@ -6,4 +6,13 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+// Deploy target: 'vercel' when building for Vercel, 'cloudflare-module' (default) otherwise.
+// Set DEPLOY_TARGET=vercel on Vercel project env vars.
+const isVercel = process.env.DEPLOY_TARGET === "vercel" || !!process.env.VERCEL;
+
+export default defineConfig({
+  // Disable the Cloudflare Workers plugin when targeting Vercel.
+  cloudflare: isVercel ? false : undefined,
+  // Tell TanStack Start which Nitro preset to bundle for.
+  tanstackStart: isVercel ? { target: "vercel" } : undefined,
+});
