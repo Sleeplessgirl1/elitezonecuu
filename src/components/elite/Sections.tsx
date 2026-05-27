@@ -795,7 +795,7 @@ export function Footer() {
           </button>
           <p className="mt-3 font-body text-base text-white/65">Llevamos la batalla a tu puerta.</p>
           <div className="mt-5 flex gap-3 font-pixel text-base">
-            <a href="#" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
+            <a href="https://www.instagram.com/elitezonecuu/" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
             <a href="#" className="border-2 border-neon-blue/60 px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-black tracking-widest">FB</a>
             <a href="#" className="border-2 border-neon-orange/60 px-4 py-2 text-neon-orange hover:bg-neon-orange hover:text-black tracking-widest">TT</a>
           </div>
