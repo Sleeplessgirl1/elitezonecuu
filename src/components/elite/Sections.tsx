@@ -684,8 +684,8 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
                   `Mensaje: ${fd.get("msg") || "-"}`,
                 ];
                 const url = `https://wa.me/5216145154240?text=${encodeURIComponent(lines.join("\n"))}`;
-                window.open(url, "_blank", "noopener,noreferrer");
                 onSubmit();
+                window.location.href = url;
               }}
               className="border-2 border-neon-green/60 bg-surface p-7 sm:p-9 glow-green"
             >
