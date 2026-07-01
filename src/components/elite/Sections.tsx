@@ -669,7 +669,24 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
             <form
-              onSubmit={(e) => { e.preventDefault(); onSubmit(); }}
+              onSubmit={(e) => {
+                e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                const lines = [
+                  "Hola ELITE ZONE, quiero reservar 🎯",
+                  "",
+                  `Nombre: ${fd.get("name") || "-"}`,
+                  `WhatsApp: ${fd.get("phone") || "-"}`,
+                  `Fecha del evento: ${fd.get("date") || "-"}`,
+                  `Paquete: ${pkg || "-"}`,
+                  `Jugadores: ${fd.get("players") || "-"}`,
+                  `Lugar: ${fd.get("place") || "-"}`,
+                  `Mensaje: ${fd.get("msg") || "-"}`,
+                ];
+                const url = `https://wa.me/5216145154240?text=${encodeURIComponent(lines.join("\n"))}`;
+                window.open(url, "_blank", "noopener,noreferrer");
+                onSubmit();
+              }}
               className="border-2 border-neon-green/60 bg-surface p-7 sm:p-9 glow-green"
             >
               <div className="grid gap-5 sm:grid-cols-2">
