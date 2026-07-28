@@ -682,7 +682,7 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
             <span className="font-pixel text-4xl text-neon-green crosshair-pulse">⊕</span>
           </div>
           <p className="mx-auto mt-5 max-w-xl font-body text-base sm:text-lg text-white/70">
-            Cuéntanos de tu evento. Respondemos en menos de 2 horas.
+            Cuéntanos de tu evento. Respondemos de inmediato.
           </p>
         </Reveal>
 
