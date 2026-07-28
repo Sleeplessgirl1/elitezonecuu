@@ -829,14 +829,15 @@ export function Footer() {
             onClick={() => { setEaster(true); setTimeout(() => setEaster(false), 1500); }}
             aria-label="Elite Zone"
           >
-            <img src={logo} alt="Elite Zone" className="h-16 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
+            <img src={logo} alt="Elite Zone" className="h-16 w-auto" />
           </button>
           <p className="mt-3 font-body text-base text-white/65">Llevamos la batalla a tu puerta.</p>
           <div className="mt-5 flex gap-3 font-pixel text-base">
-            <a href="https://www.instagram.com/elitezonecuu/" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
-            <a href="#" className="border-2 border-neon-blue/60 px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-black tracking-widest">FB</a>
-            <a href="#" className="border-2 border-neon-orange/60 px-4 py-2 text-neon-orange hover:bg-neon-orange hover:text-black tracking-widest">TT</a>
+            <a href="https://www.instagram.com/elitezonecuu?utm_source=qr" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
+            <a href="https://www.facebook.com/people/Elite-Zone-Cuu/61590087737475/" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-blue/60 px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-black tracking-widest">FB</a>
+            <a href="https://www.tiktok.com/@elitezonecuu" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-orange/60 px-4 py-2 text-neon-orange hover:bg-neon-orange hover:text-black tracking-widest">TT</a>
           </div>
+
         </div>
         <div>
           <p className="font-pixel text-lg text-neon-green text-glow-green tracking-widest">NAVEGAR</p>
