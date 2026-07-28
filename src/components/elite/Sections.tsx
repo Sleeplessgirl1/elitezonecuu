@@ -309,8 +309,14 @@ function PackageCard({ p, onReserve }: { p: Pkg; onReserve: (n: string) => void 
   const a = accentMap[p.accent];
   return (
     <Reveal>
-      <article className={`flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}>
-        <div className="flex items-start justify-between gap-3">
+      <article className={`relative flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}>
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="border-2 border-neon-orange bg-neon-orange px-4 py-1 font-pixel text-sm text-black tracking-widest glow-orange">
+            40% OFF
+          </span>
+        </div>
+
+        <div className="flex items-start justify-between gap-3 pt-3">
           <span className={`font-pixel text-sm ${a.text} ${a.textGlow} tracking-widest`}>{p.badge}</span>
           <span className="border border-white/25 px-2.5 py-1 font-pixel text-xs text-white/80 tracking-wider text-right">
             {p.capacity} · {p.duration}
@@ -319,9 +325,14 @@ function PackageCard({ p, onReserve }: { p: Pkg; onReserve: (n: string) => void 
 
         <h3 className={`mt-6 font-pixel text-3xl sm:text-4xl ${a.text} ${a.textGlow} tracking-wide`}>{p.name}</h3>
 
-        <p className="mt-5 font-display text-4xl font-bold text-white">
-          <span className={a.text}>{p.price}</span>
-        </p>
+        <div className="mt-5 flex flex-wrap items-end gap-3">
+          <p className="font-display text-4xl font-bold text-white">
+            <span className={a.text}>{p.price}</span>
+          </p>
+          <p className="font-display text-xl font-bold text-white/45 line-through decoration-neon-orange">
+            {p.originalPrice}
+          </p>
+        </div>
         <p className="mt-1 font-body text-sm uppercase tracking-wider text-white/55">MXN</p>
 
         <ul className="mt-6 flex-1 space-y-2.5 font-body text-[15px] text-white/90">
