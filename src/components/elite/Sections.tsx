@@ -14,7 +14,8 @@ const NERF_PACKAGES = [
   {
     id: "recluta",
     name: "RECLUTA",
-    price: "$2,600",
+    originalPrice: "$2,600",
+    price: "$1,560",
     accent: "green" as const,
     capacity: "Hasta 10 jugadores",
     duration: "60 min",
