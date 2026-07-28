@@ -34,7 +34,8 @@ const NERF_PACKAGES = [
   {
     id: "comandante-nerf",
     name: "COMANDANTE",
-    price: "$3,100",
+    originalPrice: "$3,100",
+    price: "$1,860",
     accent: "orange" as const,
     capacity: "Hasta 14 jugadores",
     duration: "120 min",
