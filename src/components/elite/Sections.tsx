@@ -121,9 +121,9 @@ const GEL_PACKAGES = [
 ];
 
 const ADDONS = [
-  { name: "Jugador extra", price: "+$180 MXN c/u" },
-  { name: "30 minutos adicionales", price: "+$600 MXN" },
-  { name: "5,000 gellets extra", price: "+$300 MXN" },
+  { name: "Jugador extra", originalPrice: "+$180 MXN c/u", price: "+$108 MXN c/u" },
+  { name: "30 minutos adicionales", originalPrice: "+$600 MXN", price: "+$360 MXN" },
+  { name: "5,000 gellets extra", originalPrice: "+$300 MXN", price: "+$180 MXN" },
 ];
 
 const POLICIES = [
