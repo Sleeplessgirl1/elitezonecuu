@@ -313,10 +313,12 @@
 
 /* ---------- Pulse soft ring ---------- */
 @keyframes pulse-soft {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(236,203,8,0.55); }
-  50% { box-shadow: 0 0 0 12px rgba(236,203,8,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(236,203,8,0); }
+  50% { box-shadow: 0 0 0 0 rgba(236,203,8,0); }
 }
-.pulse-soft { animation: pulse-soft 2s infinite; }
+.pulse-soft { animation: none; }
+.pulse-soft:hover { animation: pulse-soft 2s infinite; }
+
 
 /* ---------- Camo neon overlay ---------- */
 .camo {
