@@ -14,7 +14,8 @@ const NERF_PACKAGES = [
   {
     id: "recluta",
     name: "RECLUTA",
-    price: "$2,600",
+    originalPrice: "$2,600",
+    price: "$1,560",
     accent: "green" as const,
     capacity: "Hasta 10 jugadores",
     duration: "60 min",
@@ -33,7 +34,8 @@ const NERF_PACKAGES = [
   {
     id: "comandante-nerf",
     name: "COMANDANTE",
-    price: "$3,100",
+    originalPrice: "$3,100",
+    price: "$1,860",
     accent: "orange" as const,
     capacity: "Hasta 14 jugadores",
     duration: "120 min",
@@ -56,7 +58,8 @@ const GEL_PACKAGES = [
   {
     id: "comandante-gel",
     name: "COMANDANTE",
-    price: "$3,000",
+    originalPrice: "$3,000",
+    price: "$1,800",
     accent: "blue" as const,
     capacity: "Hasta 12 jugadores",
     duration: "60 min",
@@ -74,7 +77,8 @@ const GEL_PACKAGES = [
   {
     id: "fuerzas-especiales",
     name: "FUERZAS ESPECIALES",
-    price: "$3,800",
+    originalPrice: "$3,800",
+    price: "$2,280",
     accent: "green" as const,
     capacity: "Hasta 14 jugadores",
     duration: "90 min",
@@ -95,7 +99,8 @@ const GEL_PACKAGES = [
   {
     id: "elite-total",
     name: "ÉLITE TOTAL",
-    price: "$4,300",
+    originalPrice: "$4,300",
+    price: "$2,580",
     accent: "orange" as const,
     capacity: "Hasta 16 jugadores",
     duration: "2 horas",
@@ -116,9 +121,9 @@ const GEL_PACKAGES = [
 ];
 
 const ADDONS = [
-  { name: "Jugador extra", price: "+$180 MXN c/u" },
-  { name: "30 minutos adicionales", price: "+$600 MXN" },
-  { name: "5,000 gellets extra", price: "+$300 MXN" },
+  { name: "Jugador extra", originalPrice: "+$180 MXN c/u", price: "+$108 MXN c/u" },
+  { name: "30 minutos adicionales", originalPrice: "+$600 MXN", price: "+$360 MXN" },
+  { name: "5,000 gellets extra", originalPrice: "+$300 MXN", price: "+$180 MXN" },
 ];
 
 const POLICIES = [
@@ -291,6 +296,7 @@ export function Stats() {
 type Pkg = {
   id: string;
   name: string;
+  originalPrice: string;
   price: string;
   accent: "green" | "blue" | "orange";
   capacity: string;
@@ -303,8 +309,14 @@ function PackageCard({ p, onReserve }: { p: Pkg; onReserve: (n: string) => void 
   const a = accentMap[p.accent];
   return (
     <Reveal>
-      <article className={`flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}>
-        <div className="flex items-start justify-between gap-3">
+      <article className={`relative flex h-full flex-col border-2 ${a.border} bg-surface p-7 ${a.glow}`}>
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span className="border-2 border-neon-orange bg-neon-orange px-4 py-1 font-pixel text-sm text-black tracking-widest glow-orange">
+            40% OFF
+          </span>
+        </div>
+
+        <div className="flex items-start justify-between gap-3 pt-3">
           <span className={`font-pixel text-sm ${a.text} ${a.textGlow} tracking-widest`}>{p.badge}</span>
           <span className="border border-white/25 px-2.5 py-1 font-pixel text-xs text-white/80 tracking-wider text-right">
             {p.capacity} · {p.duration}
@@ -313,9 +325,14 @@ function PackageCard({ p, onReserve }: { p: Pkg; onReserve: (n: string) => void 
 
         <h3 className={`mt-6 font-pixel text-3xl sm:text-4xl ${a.text} ${a.textGlow} tracking-wide`}>{p.name}</h3>
 
-        <p className="mt-5 font-display text-4xl font-bold text-white">
-          <span className={a.text}>{p.price}</span>
-        </p>
+        <div className="mt-5 flex flex-wrap items-end gap-3">
+          <p className="font-display text-4xl font-bold text-white">
+            <span className={a.text}>{p.price}</span>
+          </p>
+          <p className="font-display text-xl font-bold text-white/45 line-through decoration-neon-orange">
+            {p.originalPrice}
+          </p>
+        </div>
         <p className="mt-1 font-body text-sm uppercase tracking-wider text-white/55">MXN</p>
 
         <ul className="mt-6 flex-1 space-y-2.5 font-body text-[15px] text-white/90">
@@ -419,7 +436,10 @@ export function Packages({ onReserve }: { onReserve: (name: string) => void }) {
               <Reveal key={ad.name}>
                 <div className="flex h-full flex-col justify-between border-2 border-white/15 bg-surface p-6 transition hover:border-neon-orange hover:-translate-y-1">
                   <p className="font-display text-lg font-bold uppercase tracking-wider text-white">{ad.name}</p>
-                  <p className="mt-4 font-pixel text-2xl text-neon-orange text-glow-orange tracking-widest">{ad.price}</p>
+                  <div className="mt-4 flex flex-wrap items-end gap-2">
+                    <p className="font-pixel text-2xl text-neon-orange text-glow-orange tracking-widest">{ad.price}</p>
+                    <p className="font-display text-base font-bold text-white/45 line-through decoration-neon-orange">{ad.originalPrice}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}

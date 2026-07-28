@@ -11,8 +11,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 const isVercel = process.env.DEPLOY_TARGET === "vercel" || !!process.env.VERCEL;
 
 export default defineConfig({
-  // Disable the Cloudflare Workers plugin when targeting Vercel.
-  cloudflare: isVercel ? false : undefined,
+  // Disable nitro (Cloudflare Workers preset) when targeting Vercel.
+  nitro: isVercel ? false : undefined,
   // Tell TanStack Start which Nitro preset to bundle for.
   tanstackStart: isVercel ? { target: "vercel" } : undefined,
 });
