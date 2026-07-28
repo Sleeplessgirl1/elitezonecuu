@@ -58,12 +58,13 @@
 
   /* "neon-green" is now NEON YELLOW (#eccb08) */
   --neon-green: #eccb08;
-  /* secondary neon cyan accent (kept) */
-  --neon-blue: #00bfff;
+  /* secondary accent: royal blue */
+  --neon-blue: #3b6fe8;
   /* "neon-orange" is now NEON NAVY ACCENT — a brighter, visible neon variant of #0f2c67 */
   --neon-orange: #3b6fe8;
   /* raw deep navy fill, per spec */
   --neon-navy: #0f2c67;
+
 
   --primary: var(--neon-green);
   --primary-foreground: #000000;
