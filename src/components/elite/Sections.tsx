@@ -436,7 +436,10 @@ export function Packages({ onReserve }: { onReserve: (name: string) => void }) {
               <Reveal key={ad.name}>
                 <div className="flex h-full flex-col justify-between border-2 border-white/15 bg-surface p-6 transition hover:border-neon-orange hover:-translate-y-1">
                   <p className="font-display text-lg font-bold uppercase tracking-wider text-white">{ad.name}</p>
-                  <p className="mt-4 font-pixel text-2xl text-neon-orange text-glow-orange tracking-widest">{ad.price}</p>
+                  <div className="mt-4 flex flex-wrap items-end gap-2">
+                    <p className="font-pixel text-2xl text-neon-orange text-glow-orange tracking-widest">{ad.price}</p>
+                    <p className="font-display text-base font-bold text-white/45 line-through decoration-neon-orange">{ad.originalPrice}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
