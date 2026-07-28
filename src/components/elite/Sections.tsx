@@ -127,7 +127,7 @@ const ADDONS = [
 ];
 
 const POLICIES = [
-  { q: "Anticipo y reserva", a: "Anticipo del 30% no reembolsable para confirmar la fecha del evento. Liquidación el día del montaje." },
+  { q: "Anticipo y reserva", a: "Anticipo del 40% no reembolsable para confirmar la fecha del evento. Liquidación el día del montaje." },
   { q: "Cambios de fecha", a: "Cambios de fecha aceptados con un aviso mínimo de 72 horas previas al evento." },
   { q: "Mínimo de jugadores", a: "Mínimo 10 jugadores por evento para garantizar la mejor experiencia de batalla." },
   { q: "Traslado y cobertura", a: "Traslado incluido dentro de Chihuahua ciudad. Zonas foráneas se cotizan por separado." },
@@ -682,7 +682,7 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
             <span className="font-pixel text-4xl text-neon-green crosshair-pulse">⊕</span>
           </div>
           <p className="mx-auto mt-5 max-w-xl font-body text-base sm:text-lg text-white/70">
-            Cuéntanos de tu evento. Respondemos en menos de 2 horas.
+            Cuéntanos de tu evento. Respondemos de inmediato.
           </p>
         </Reveal>
 
@@ -745,8 +745,9 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
             <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@elitezonecuu" color="orange" href="https://www.instagram.com/elitezonecuu/" />
             <div className="border-2 border-white/15 bg-surface p-6">
               <p className="font-pixel text-base text-neon-green text-glow-green tracking-widest">⏱ TIEMPO DE RESPUESTA</p>
-              <p className="mt-3 font-display text-2xl font-bold text-white">Menos de 2 horas</p>
+              <p className="mt-3 font-display text-2xl font-bold text-white">Inmediato</p>
               <p className="mt-1 font-body text-sm text-white/65">Lun a Dom · 9am a 9pm</p>
+
             </div>
           </Reveal>
         </div>
@@ -828,14 +829,15 @@ export function Footer() {
             onClick={() => { setEaster(true); setTimeout(() => setEaster(false), 1500); }}
             aria-label="Elite Zone"
           >
-            <img src={logo} alt="Elite Zone" className="h-16 w-auto drop-shadow-[0_0_12px_rgba(236,203,8,0.6)]" />
+            <img src={logo} alt="Elite Zone" className="h-16 w-auto" />
           </button>
           <p className="mt-3 font-body text-base text-white/65">Llevamos la batalla a tu puerta.</p>
           <div className="mt-5 flex gap-3 font-pixel text-base">
-            <a href="https://www.instagram.com/elitezonecuu/" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
-            <a href="#" className="border-2 border-neon-blue/60 px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-black tracking-widest">FB</a>
-            <a href="#" className="border-2 border-neon-orange/60 px-4 py-2 text-neon-orange hover:bg-neon-orange hover:text-black tracking-widest">TT</a>
+            <a href="https://www.instagram.com/elitezonecuu?utm_source=qr" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-green/60 px-4 py-2 text-neon-green hover:bg-neon-green hover:text-black tracking-widest">IG</a>
+            <a href="https://www.facebook.com/people/Elite-Zone-Cuu/61590087737475/" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-blue/60 px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-black tracking-widest">FB</a>
+            <a href="https://www.tiktok.com/@elitezonecuu" target="_blank" rel="noopener noreferrer" className="border-2 border-neon-orange/60 px-4 py-2 text-neon-orange hover:bg-neon-orange hover:text-black tracking-widest">TT</a>
           </div>
+
         </div>
         <div>
           <p className="font-pixel text-lg text-neon-green text-glow-green tracking-widest">NAVEGAR</p>
