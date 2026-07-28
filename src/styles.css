@@ -134,6 +134,10 @@
 .glitch {
   position: relative;
   color: #eccb08;
+  text-shadow: none;
+  transition: text-shadow 0.25s ease;
+}
+.glitch:hover {
   text-shadow: 0 0 14px rgba(236, 203, 8, 0.7);
 }
 .glitch::before,
@@ -142,9 +146,15 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.glitch:hover::before,
+.glitch:hover::after {
+  opacity: 1;
 }
 .glitch::before {
-  color: #00bfff;
+  color: #3b6fe8;
   transform: translate(2px, 0);
   mix-blend-mode: screen;
   animation: glitch-x 2.4s infinite steps(2, end);
@@ -162,14 +172,24 @@
   96% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 2px); }
 }
 
-/* ---------- Neon glow ---------- */
-.glow-green { box-shadow: 0 0 28px rgba(236, 203, 8, 0.55), inset 0 0 14px rgba(236, 203, 8, 0.12); }
-.glow-blue  { box-shadow: 0 0 28px rgba(0, 191, 255, 0.5), inset 0 0 14px rgba(0, 191, 255, 0.12); }
-.glow-orange{ box-shadow: 0 0 30px rgba(59, 111, 232, 0.65), inset 0 0 14px rgba(15, 44, 103, 0.35); }
+/* ---------- Neon glow (hover only) ---------- */
+.glow-green,
+.glow-blue,
+.glow-orange {
+  box-shadow: none;
+  transition: box-shadow 0.25s ease;
+}
+.glow-green:hover { box-shadow: 0 0 28px rgba(236, 203, 8, 0.55), inset 0 0 14px rgba(236, 203, 8, 0.12); }
+.glow-blue:hover  { box-shadow: 0 0 28px rgba(59, 111, 232, 0.5), inset 0 0 14px rgba(59, 111, 232, 0.12); }
+.glow-orange:hover{ box-shadow: 0 0 30px rgba(59, 111, 232, 0.65), inset 0 0 14px rgba(15, 44, 103, 0.35); }
 
-.text-glow-green  { text-shadow: none; }
-.text-glow-blue   { text-shadow: none; }
-.text-glow-orange { text-shadow: none; }
+.text-glow-green,
+.text-glow-blue,
+.text-glow-orange { text-shadow: none; transition: text-shadow 0.25s ease; }
+.text-glow-green:hover  { text-shadow: 0 0 12px rgba(236, 203, 8, 0.75); }
+.text-glow-blue:hover   { text-shadow: 0 0 12px rgba(59, 111, 232, 0.75); }
+.text-glow-orange:hover { text-shadow: 0 0 12px rgba(59, 111, 232, 0.75); }
+
 
 /* ---------- Recoil button ---------- */
 .btn-shoot {
