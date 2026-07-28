@@ -58,7 +58,8 @@ const GEL_PACKAGES = [
   {
     id: "comandante-gel",
     name: "COMANDANTE",
-    price: "$3,000",
+    originalPrice: "$3,000",
+    price: "$1,800",
     accent: "blue" as const,
     capacity: "Hasta 12 jugadores",
     duration: "60 min",
