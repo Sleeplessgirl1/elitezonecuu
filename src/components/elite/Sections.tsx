@@ -296,6 +296,7 @@ export function Stats() {
 type Pkg = {
   id: string;
   name: string;
+  originalPrice: string;
   price: string;
   accent: "green" | "blue" | "orange";
   capacity: string;
