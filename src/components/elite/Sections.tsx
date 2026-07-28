@@ -99,7 +99,8 @@ const GEL_PACKAGES = [
   {
     id: "elite-total",
     name: "ÉLITE TOTAL",
-    price: "$4,300",
+    originalPrice: "$4,300",
+    price: "$2,580",
     accent: "orange" as const,
     capacity: "Hasta 16 jugadores",
     duration: "2 horas",
