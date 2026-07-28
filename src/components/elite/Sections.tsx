@@ -127,7 +127,7 @@ const ADDONS = [
 ];
 
 const POLICIES = [
-  { q: "Anticipo y reserva", a: "Anticipo del 30% no reembolsable para confirmar la fecha del evento. Liquidación el día del montaje." },
+  { q: "Anticipo y reserva", a: "Anticipo del 40% no reembolsable para confirmar la fecha del evento. Liquidación el día del montaje." },
   { q: "Cambios de fecha", a: "Cambios de fecha aceptados con un aviso mínimo de 72 horas previas al evento." },
   { q: "Mínimo de jugadores", a: "Mínimo 10 jugadores por evento para garantizar la mejor experiencia de batalla." },
   { q: "Traslado y cobertura", a: "Traslado incluido dentro de Chihuahua ciudad. Zonas foráneas se cotizan por separado." },
