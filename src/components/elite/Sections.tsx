@@ -745,8 +745,9 @@ export function Contact({ onSubmit, prefill }: { onSubmit: () => void; prefill?:
             <ContactCard icon="📸" title="Instagram" sub="Mira las batallas" cta="@elitezonecuu" color="orange" href="https://www.instagram.com/elitezonecuu/" />
             <div className="border-2 border-white/15 bg-surface p-6">
               <p className="font-pixel text-base text-neon-green text-glow-green tracking-widest">⏱ TIEMPO DE RESPUESTA</p>
-              <p className="mt-3 font-display text-2xl font-bold text-white">Menos de 2 horas</p>
+              <p className="mt-3 font-display text-2xl font-bold text-white">Inmediato</p>
               <p className="mt-1 font-body text-sm text-white/65">Lun a Dom · 9am a 9pm</p>
+
             </div>
           </Reveal>
         </div>
