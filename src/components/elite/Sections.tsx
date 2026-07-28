@@ -77,7 +77,8 @@ const GEL_PACKAGES = [
   {
     id: "fuerzas-especiales",
     name: "FUERZAS ESPECIALES",
-    price: "$3,800",
+    originalPrice: "$3,800",
+    price: "$2,280",
     accent: "green" as const,
     capacity: "Hasta 14 jugadores",
     duration: "90 min",
